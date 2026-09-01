@@ -64,6 +64,9 @@
 
 body {
   margin: 0;
+  font-family: var(--font-family-base);
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 h1,
