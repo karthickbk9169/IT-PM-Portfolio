@@ -14,21 +14,39 @@ type Project = {
 
 function App() {
   const [projects, setProjects] = useState<Project[]>([])
+  const [loading, setLoading] = useState(true)
+const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('http://localhost:5029/api/projects')
-      .then(response => response.json())
-      .then(data => setProjects(data))
-      .catch(error => console.error('Error fetching projects:', error))
-  }, [])
+  const loadProjects = async () => {
+    try {
+      const response = await fetch('http://localhost:5029/api/projects')
+
+      if (!response.ok) {
+        throw new Error('Unable to load projects.')
+      }
+
+      const data: Project[] = await response.json()
+      setProjects(data)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  loadProjects()
+}, [])
 
   return (
     <div>
+      {loading && <p>Loading projects...</p>}
+      {error && <p>{error}</p>}
       <h1>IT Project Management Portfolio</h1>
 
       <h2>Project Management Artifacts</h2>
 
-      {projects.map(project => (
+      {!loading && !error && projects.map(project => (
         <div key={project.id}>
           <h3>{project.title}</h3>
           <p><strong>Category:</strong> {project.category}</p>
