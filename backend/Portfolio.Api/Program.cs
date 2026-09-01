@@ -1,6 +1,7 @@
 using Portfolio.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Api.Data;
+using Portfolio.Api.Features.Projects;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,12 +35,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/api/projects", async (PortfolioDbContext db) =>
-{
-    var projects = await db.Projects.ToListAsync();
-
-    return projects;
-})
-.WithName("GetProjects");
+app.MapProjectEndpoints();
 
 app.Run();
