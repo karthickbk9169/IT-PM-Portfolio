@@ -34,40 +34,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var projects = new Project[]
+app.MapGet("/api/projects", async (PortfolioDbContext db) =>
 {
-    new Project
-    {
-        Id = 1,
-        Title = "Project Charter",
-        Category = "Project Document",
-        Description = "Defines project purpose, objectives, scope, deliverables, milestones, budget, risks, governance, stakeholders, and success criteria."
-    },
-    new Project
-    {
-        Id = 2,
-        Title = "Project Lifecycle Selection",
-        Category = "Decision Tool",
-        Description = "Evaluates project characteristics to support selection of predictive, Agile, or hybrid delivery."
-    },
-    new Project
-    {
-        Id = 3,
-        Title = "Stakeholder Register",
-        Category = "Stakeholder Management",
-        Description = "Identifies stakeholders and documents their influence, interest, engagement, communication needs, and management strategies."
-    }
-};
+    var projects = await db.Projects.ToListAsync();
 
-app.MapGet("/api/projects", () =>
-{
     return projects;
 })
 .WithName("GetProjects");
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
