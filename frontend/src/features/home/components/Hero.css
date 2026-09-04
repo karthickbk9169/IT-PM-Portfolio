@@ -1,0 +1,210 @@
+.hero-section {
+  padding: var(--space-3xl) 0;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      var(--color-primary-light) 0,
+      transparent 28%
+    ),
+    var(--color-background);
+}
+
+.hero-section__inner {
+  width: min(100% - 2rem, var(--content-max-width));
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  align-items: center;
+  gap: var(--space-3xl);
+}
+
+.hero-section__content {
+  max-width: 720px;
+}
+
+.hero-section__eyebrow {
+  margin: 0 0 var(--space-md);
+
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-section h1 {
+  margin: 0;
+
+  color: var(--color-text);
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.hero-section__highlight {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-section__description {
+  max-width: 680px;
+  margin: var(--space-lg) 0 0;
+
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.hero-section__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+
+/* Project lifecycle dashboard */
+
+.hero-dashboard {
+  padding: var(--space-lg);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-dashboard__card {
+  padding: var(--space-lg);
+
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.hero-dashboard__lifecycle {
+  background: var(--color-background-alt);
+}
+
+.hero-dashboard__label {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.hero-dashboard__steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.hero-dashboard__steps span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: var(--space-sm);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+
+  color: var(--color-text-strong);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.hero-dashboard strong {
+  display: block;
+
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.hero-dashboard__status {
+  display: flex !important;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.hero-dashboard__status-dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+
+  background: var(--color-success);
+  border-radius: 50%;
+}
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .hero-section__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section__content {
+    max-width: 800px;
+  }
+
+  .hero-dashboard {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.4rem, 11vw, 3.4rem);
+  }
+
+  .hero-dashboard__steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-section__actions .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-dashboard {
+    padding: var(--space-md);
+  }
+
+  .hero-dashboard__card {
+    padding: var(--space-md);
+  }
+
+  .hero-dashboard__steps {
+    grid-template-columns: 1fr;
+  }
+}

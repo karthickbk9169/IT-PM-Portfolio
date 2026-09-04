@@ -1,0 +1,126 @@
+.tools-section {
+  padding: var(--space-3xl) 0;
+  background: var(--color-surface);
+}
+
+.tools-section__inner {
+  width: min(100% - 2rem, var(--content-max-width));
+  margin: 0 auto;
+}
+
+.tools-section__heading {
+  margin: 0 0 var(--space-xl);
+
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tools-section__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
+}
+
+.tool-card {
+  min-height: 96px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+
+  padding: var(--space-lg);
+
+  text-align: center;
+}
+
+.tool-card + .tool-card {
+  border-left: 1px solid var(--color-border-soft);
+}
+
+.tool-card__mark {
+  min-width: 36px;
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 0.45rem;
+
+  background: var(--color-primary-light);
+  border-radius: 10px;
+
+  color: var(--color-primary-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.tool-card__name {
+  color: var(--color-text-strong);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .tools-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tool-card + .tool-card {
+    border-left: none;
+  }
+
+  .tool-card:nth-child(3n + 2),
+  .tool-card:nth-child(3n + 3) {
+    border-left: 1px solid var(--color-border-soft);
+  }
+
+  .tool-card:nth-child(n + 4) {
+    border-top: 1px solid var(--color-border-soft);
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .tools-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .tools-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tool-card:nth-child(3n + 2),
+  .tool-card:nth-child(3n + 3) {
+    border-left: none;
+  }
+
+  .tool-card:nth-child(even) {
+    border-left: 1px solid var(--color-border-soft);
+  }
+
+  .tool-card:nth-child(n + 3) {
+    border-top: 1px solid var(--color-border-soft);
+  }
+
+  .tool-card {
+    min-height: 88px;
+    padding: var(--space-md);
+  }
+}

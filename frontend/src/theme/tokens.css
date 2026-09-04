@@ -1,33 +1,85 @@
 :root {
+
   /* Colors */
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #dbeafe;
 
-  --color-background: #f8fbff;
+  --color-primary: #5b3df5;
+  --color-primary-dark: #4427d9;
+  --color-primary-light: #ede9fe;
+
+  --color-secondary: #2563eb;
+  --color-secondary-dark: #1d4ed8;
+  --color-secondary-light: #dbeafe;
+
+  --color-accent: #7c3aed;
+  --color-accent-magenta: #c026d3;
+  --color-accent-teal: #0f766e;
+
+  --color-background: #faf9ff;
+  --color-background-alt: #f4f0ff;
   --color-surface: #ffffff;
+  --color-surface-soft: #f8f7ff;
 
-  --color-text: #0f172a;
+  --color-text: #111827;
+  --color-text-strong: #1e1b4b;
   --color-text-muted: #475569;
-  --color-border: #dbe3ee;
+
+  --color-border: #ddd6fe;
+  --color-border-soft: #e9e5ff;
+
+  --color-success: #15803d;
+  --color-focus: #1d4ed8;
+
+  /* Gradients */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #5b3df5 0%,
+    #2563eb 100%
+  );
+
+  --gradient-accent: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #2563eb 100%
+  );
+
+  --gradient-footer: linear-gradient(
+    135deg,
+    #17133d 0%,
+    #241451 55%,
+    #31206a 100%
+  );
 
   /* Typography */
-  --font-family-base: Arial, Helvetica, sans-serif;
+
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 
   /* Spacing */
+
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+
+  --content-max-width: 1200px;
 
   /* Shape */
+
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
+  --radius-xl: 24px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
-  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.1);
+
+  --shadow-sm: 0 1px 3px rgba(30, 27, 75, 0.08);
+  --shadow-md: 0 8px 24px rgba(30, 27, 75, 0.10);
+  --shadow-lg: 0 20px 50px rgba(30, 27, 75, 0.12);
+
 }
