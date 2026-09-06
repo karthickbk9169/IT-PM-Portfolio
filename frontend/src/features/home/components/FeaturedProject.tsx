@@ -1,3 +1,22 @@
+import {
+  BriefcaseBusiness,
+  Code2,
+  Clock3,
+  LayoutDashboard,
+  Search,
+  Bell,
+  UserCircle2,
+  FileText,
+  UserRound,
+  Gift,
+  CheckCircle2,
+  HelpCircle,
+  CalendarDays,
+  HeartPulse,
+  UsersRound,
+  Mail,
+  ArrowRight,
+} from 'lucide-react'
 import type { Project } from '../../projects/types'
 import { Link } from 'react-router-dom'
 import './FeaturedProject.css'
@@ -34,72 +53,203 @@ export function FeaturedProject({ project }: FeaturedProjectProps) {
             className="featured-project-section__tags"
             aria-label="Project details"
           >
-            <span>{project.category}</span>
-            <span>Technical Project</span>
-            <span>{project.status}</span>
-          </div>
+            <span>
+              <BriefcaseBusiness size={15} aria-hidden="true" />
+              {project.category}
+            </span>
 
-          <Link
-  className="featured-project-section__link"
-  to="/projects"
-  aria-label={`View project details for ${project.title}`}
->
-  View Project Details
-  <span aria-hidden="true"> →</span>
-</Link>
-        </div>
+            <span>
+              <Code2 size={15} aria-hidden="true" />
+              Technical Project
+            </span>
 
-        <div
-          className="featured-project-visual"
-          aria-label="PeopleFirst project delivery dashboard"
-        >
-          <div className="featured-project-visual__header">
-            <div>
-              <p>PeopleFirst Portal</p>
-              <strong>Project Delivery Overview</strong>
-            </div>
-
-            <span className="featured-project-visual__status">
+            <span>
+              <Clock3 size={15} aria-hidden="true" />
               {project.status}
             </span>
           </div>
 
-          <div className="featured-project-visual__progress">
-            <div>
-              <span>Planning</span>
-              <strong>Complete</strong>
+          <Link
+            className="featured-project-section__link"
+            to="/projects"
+            aria-label={`View project details for ${project.title}`}
+          >
+            View Project Details
+            <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div
+          className="featured-project-visual"
+          aria-label="PeopleFirst employee self-service portal preview"
+        >
+          <div className="portal-preview__topbar">
+            <div className="portal-preview__brand">
+              <span className="portal-preview__brand-mark">
+                <LayoutDashboard size={14} aria-hidden="true" />
+              </span>
+              <strong>PeopleFirst</strong>
             </div>
 
-            <div>
-              <span>Delivery</span>
-              <strong>In Progress</strong>
-            </div>
-
-            <div>
-              <span>Quality</span>
-              <strong>Active</strong>
+            <div className="portal-preview__top-actions">
+              <Search size={15} aria-hidden="true" />
+              <Bell size={15} aria-hidden="true" />
+              <UserCircle2 size={16} aria-hidden="true" />
             </div>
           </div>
 
-          <div className="featured-project-visual__grid">
-            <div className="featured-project-visual__card">
-              <span>Delivery Model</span>
-              <strong>Hybrid Agile</strong>
-            </div>
+          <div className="portal-preview__body">
+            <aside className="portal-preview__sidebar">
+              <div className="portal-preview__nav-item is-active">
+                <LayoutDashboard size={14} aria-hidden="true" />
+                <span>Dashboard</span>
+              </div>
 
-            <div className="featured-project-visual__card">
-              <span>Role</span>
-              <strong>TPM / Scrum Master</strong>
-            </div>
+              <div className="portal-preview__nav-item">
+                <Search size={14} aria-hidden="true" />
+                <span>Requests</span>
+              </div>
 
-            <div className="featured-project-visual__card">
-              <span>Governance</span>
-              <strong>Active</strong>
-            </div>
+              <div className="portal-preview__nav-item">
+                <UserRound size={14} aria-hidden="true" />
+                <span>My Profile</span>
+              </div>
 
-            <div className="featured-project-visual__card">
-              <span>Risk Management</span>
-              <strong>Tracked</strong>
+              <div className="portal-preview__nav-item">
+                <Gift size={14} aria-hidden="true" />
+                <span>Benefits</span>
+              </div>
+
+              <div className="portal-preview__nav-item">
+                <CheckCircle2 size={14} aria-hidden="true" />
+                <span>Approvals</span>
+              </div>
+
+              <div className="portal-preview__nav-item">
+                <HelpCircle size={14} aria-hidden="true" />
+                <span>Help & Support</span>
+              </div>
+            </aside>
+
+            <div className="portal-preview__main">
+              <div className="portal-preview__welcome">
+                <div>
+                  <strong>Welcome back, Employee</strong>
+                  <span>How can we help you today?</span>
+                </div>
+
+                <div className="portal-preview__quick-actions">
+                  <button type="button">
+                    <FileText size={13} aria-hidden="true" />
+                    New Request
+                  </button>
+
+                  <button type="button">
+                    <HeartPulse size={13} aria-hidden="true" />
+                    View Benefits
+                  </button>
+                </div>
+              </div>
+
+              <div className="portal-preview__content-grid">
+                <div className="portal-preview__left">
+                  <section className="portal-preview__panel">
+                    <div className="portal-preview__panel-heading">
+                      <strong>My Requests</strong>
+                    </div>
+
+                    <div className="portal-preview__stats">
+                      <div>
+                        <span>In Progress</span>
+                        <strong>2</strong>
+                      </div>
+
+                      <div>
+                        <span>Completed</span>
+                        <strong>8</strong>
+                      </div>
+
+                      <div>
+                        <span>Pending</span>
+                        <strong>1</strong>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="portal-preview__panel">
+                    <div className="portal-preview__panel-heading">
+                      <strong>Approvals</strong>
+                    </div>
+
+                    <div className="portal-preview__approval">
+                      <div className="portal-preview__approval-person">
+                        <span className="portal-preview__avatar">
+                          <UserRound size={14} aria-hidden="true" />
+                        </span>
+
+                        <div>
+                          <strong>Leave Request</strong>
+                          <span>John Doe</span>
+                        </div>
+                      </div>
+
+                      <div className="portal-preview__approval-actions">
+                        <button type="button">Approve</button>
+                        <button type="button">Reject</button>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+
+                <div className="portal-preview__right">
+                  <section className="portal-preview__panel">
+                    <div className="portal-preview__panel-heading">
+                      <strong>Quick Actions</strong>
+                    </div>
+
+                    <div className="portal-preview__mini-actions">
+                      <div>
+                        <CalendarDays size={13} aria-hidden="true" />
+                        <span>Leave Request</span>
+                      </div>
+
+                      <div>
+                        <UsersRound size={13} aria-hidden="true" />
+                        <span>Profile Update</span>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="portal-preview__panel">
+                    <div className="portal-preview__panel-heading">
+                      <strong>Announcements</strong>
+                    </div>
+
+                    <div className="portal-preview__announcement">
+                      <strong>System Maintenance</strong>
+                      <span>Scheduled maintenance notice</span>
+                    </div>
+                  </section>
+
+                  <section className="portal-preview__panel">
+                    <div className="portal-preview__panel-heading">
+                      <strong>Popular Services</strong>
+                    </div>
+
+                    <div className="portal-preview__services">
+                      <span>
+                        <Mail size={12} aria-hidden="true" />
+                        Leave Requests
+                      </span>
+
+                      <span>
+                        <UserRound size={12} aria-hidden="true" />
+                        Profile Update
+                      </span>
+                    </div>
+                  </section>
+                </div>
+              </div>
             </div>
           </div>
         </div>

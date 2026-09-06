@@ -1,0 +1,180 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 520 720"
+  fill="none"
+>
+  <defs>
+    <linearGradient id="lineGradient" x1="70" y1="60" x2="470" y2="650">
+      <stop offset="0%" stop-color="#8B7CFF" stop-opacity="0.10"/>
+      <stop offset="45%" stop-color="#7566F5" stop-opacity="0.34"/>
+      <stop offset="100%" stop-color="#5B8CFF" stop-opacity="0.12"/>
+    </linearGradient>
+
+    <radialGradient id="nodeGlow">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="45%" stop-color="#E8E4FF"/>
+      <stop offset="100%" stop-color="#7768F8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="backgroundGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7967F8" stop-opacity="0.16"/>
+      <stop offset="55%" stop-color="#7967F8" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#7967F8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="fadeMaskGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="black" stop-opacity="0"/>
+      <stop offset="28%" stop-color="white" stop-opacity="0.35"/>
+      <stop offset="58%" stop-color="white"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <mask id="fadeMask">
+      <rect
+        x="0"
+        y="0"
+        width="520"
+        height="720"
+        fill="url(#fadeMaskGradient)"
+      />
+    </mask>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+  </defs>
+
+  <!-- Soft lavender atmosphere -->
+  <ellipse
+    cx="365"
+    cy="325"
+    rx="245"
+    ry="345"
+    fill="url(#backgroundGlow)"
+  />
+
+  <g mask="url(#fadeMask)">
+    <!-- Main fine network -->
+    <g
+      stroke="url(#lineGradient)"
+      stroke-width="1"
+      stroke-linecap="round"
+    >
+      <path d="M78 66 L156 110 L241 74 L331 118 L438 78"/>
+      <path d="M78 66 L105 163 L156 110 L198 186 L241 74"/>
+      <path d="M241 74 L281 164 L331 118 L376 198 L438 78"/>
+
+      <path d="M105 163 L58 242 L139 259 L198 186"/>
+      <path d="M198 186 L245 278 L281 164"/>
+      <path d="M281 164 L339 258 L376 198"/>
+      <path d="M376 198 L446 274 L438 78"/>
+
+      <path d="M58 242 L94 348 L139 259"/>
+      <path d="M139 259 L186 352 L245 278"/>
+      <path d="M245 278 L291 365 L339 258"/>
+      <path d="M339 258 L405 353 L446 274"/>
+
+      <path d="M94 348 L53 437 L153 449 L186 352"/>
+      <path d="M186 352 L236 446 L291 365"/>
+      <path d="M291 365 L350 455 L405 353"/>
+      <path d="M405 353 L466 438 L446 274"/>
+
+      <path d="M53 437 L102 535 L153 449"/>
+      <path d="M153 449 L202 551 L236 446"/>
+      <path d="M236 446 L293 542 L350 455"/>
+      <path d="M350 455 L414 548 L466 438"/>
+
+      <path d="M102 535 L158 630 L202 551"/>
+      <path d="M202 551 L267 642 L293 542"/>
+      <path d="M293 542 L372 628 L414 548"/>
+
+      <!-- cross-links -->
+      <path d="M105 163 L198 186"/>
+      <path d="M198 186 L281 164"/>
+      <path d="M281 164 L376 198"/>
+
+      <path d="M58 242 L139 259"/>
+      <path d="M139 259 L245 278"/>
+      <path d="M245 278 L339 258"/>
+      <path d="M339 258 L446 274"/>
+
+      <path d="M94 348 L186 352"/>
+      <path d="M186 352 L291 365"/>
+      <path d="M291 365 L405 353"/>
+
+      <path d="M53 437 L153 449"/>
+      <path d="M153 449 L236 446"/>
+      <path d="M236 446 L350 455"/>
+      <path d="M350 455 L466 438"/>
+
+      <path d="M102 535 L202 551"/>
+      <path d="M202 551 L293 542"/>
+      <path d="M293 542 L414 548"/>
+    </g>
+
+    <!-- Secondary faint network -->
+    <g
+      stroke="#9C91FF"
+      stroke-opacity="0.13"
+      stroke-width="0.8"
+    >
+      <path d="M156 110 L139 259"/>
+      <path d="M241 74 L245 278"/>
+      <path d="M331 118 L339 258"/>
+      <path d="M94 348 L153 449"/>
+      <path d="M186 352 L202 551"/>
+      <path d="M291 365 L293 542"/>
+      <path d="M405 353 L414 548"/>
+    </g>
+
+    <!-- Nodes -->
+    <g>
+      <g fill="#FFFFFF" stroke="#7C6CF7" stroke-width="1">
+        <circle cx="78" cy="66" r="3"/>
+        <circle cx="156" cy="110" r="3.4"/>
+        <circle cx="241" cy="74" r="2.8"/>
+        <circle cx="331" cy="118" r="3.2"/>
+        <circle cx="438" cy="78" r="2.7"/>
+
+        <circle cx="105" cy="163" r="2.6"/>
+        <circle cx="198" cy="186" r="3.5"/>
+        <circle cx="281" cy="164" r="2.6"/>
+        <circle cx="376" cy="198" r="3"/>
+
+        <circle cx="58" cy="242" r="2.5"/>
+        <circle cx="139" cy="259" r="3"/>
+        <circle cx="245" cy="278" r="3.6"/>
+        <circle cx="339" cy="258" r="3"/>
+        <circle cx="446" cy="274" r="2.6"/>
+
+        <circle cx="94" cy="348" r="2.7"/>
+        <circle cx="186" cy="352" r="3.2"/>
+        <circle cx="291" cy="365" r="3.7"/>
+        <circle cx="405" cy="353" r="3"/>
+
+        <circle cx="53" cy="437" r="2.5"/>
+        <circle cx="153" cy="449" r="3"/>
+        <circle cx="236" cy="446" r="3.3"/>
+        <circle cx="350" cy="455" r="3"/>
+        <circle cx="466" cy="438" r="2.6"/>
+
+        <circle cx="102" cy="535" r="2.7"/>
+        <circle cx="202" cy="551" r="3"/>
+        <circle cx="293" cy="542" r="3.5"/>
+        <circle cx="414" cy="548" r="2.8"/>
+
+        <circle cx="158" cy="630" r="2.5"/>
+        <circle cx="267" cy="642" r="3"/>
+        <circle cx="372" cy="628" r="2.6"/>
+      </g>
+
+      <!-- A few brighter nodes -->
+      <g filter="url(#softGlow)" opacity="0.55">
+        <circle cx="198" cy="186" r="9" fill="url(#nodeGlow)"/>
+        <circle cx="245" cy="278" r="10" fill="url(#nodeGlow)"/>
+        <circle cx="291" cy="365" r="11" fill="url(#nodeGlow)"/>
+        <circle cx="293" cy="542" r="9" fill="url(#nodeGlow)"/>
+      </g>
+    </g>
+  </g>
+</svg>

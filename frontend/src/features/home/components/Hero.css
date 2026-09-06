@@ -1,162 +1,355 @@
+/* =========================================================
+   HERO SECTION
+   ---------------------------------------------------------
+   Visual decoration is now supplied by the Home page-level
+   PageSideDecoration component.
+   ========================================================= */
+
 .hero-section {
-  padding: var(--space-3xl) 0;
-  background:
-    radial-gradient(
-      circle at 85% 20%,
-      var(--color-primary-light) 0,
-      transparent 28%
-    ),
-    var(--color-background);
+  position: relative;
+
+  padding: 2.6rem 0 2.15rem;
+
+  overflow: visible;
+
+  background: transparent;
 }
 
+
+/* =========================================================
+   HERO CONTENT LAYOUT
+   ========================================================= */
+
 .hero-section__inner {
-  width: min(100% - 2rem, var(--content-max-width));
+  position: relative;
+
+  z-index: 3;
+
+  width: min(
+    100% - 2rem,
+    var(--content-max-width)
+  );
+
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(380px, 0.92fr);
+
   align-items: center;
-  gap: var(--space-3xl);
+
+  gap: 2.5rem;
 }
 
 .hero-section__content {
   max-width: 720px;
 }
 
+
+/* =========================================================
+   HERO TYPOGRAPHY
+   ========================================================= */
+
 .hero-section__eyebrow {
   margin: 0 0 var(--space-md);
 
   color: var(--color-primary);
+
   font-size: 0.9rem;
   font-weight: 800;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 }
 
 .hero-section h1 {
   margin: 0;
 
-  color: var(--color-text);
-  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  color: #181442;
+
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    4.6rem
+  );
+
   line-height: 1.04;
+
   letter-spacing: -0.045em;
 }
 
 .hero-section__highlight {
-  background: var(--gradient-primary);
+  background:
+    linear-gradient(
+      90deg,
+      #592df5 0%,
+      #315eea 100%
+    );
+
   background-clip: text;
   -webkit-background-clip: text;
+
   color: transparent;
 }
 
 .hero-section__description {
   max-width: 680px;
+
   margin: var(--space-lg) 0 0;
 
-  color: var(--color-text-muted);
+  color: #555474;
+
   font-size: 1.1rem;
-  line-height: 1.75;
+
+  line-height: 1.7;
 }
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
 
 .hero-section__actions {
   display: flex;
+
   flex-wrap: wrap;
+
   gap: var(--space-md);
-  margin-top: var(--space-xl);
+
+  margin-top: 1.55rem;
+}
+
+.hero-section__actions .button {
+  min-height: 46px;
+
+  padding-inline: 1.25rem;
 }
 
 
-/* Project lifecycle dashboard */
+/* =========================================================
+   PROJECT LIFECYCLE DASHBOARD
+   ========================================================= */
 
 .hero-dashboard {
+  position: relative;
+
+  z-index: 3;
+
   padding: var(--space-lg);
 
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.12);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 18px 48px
+    rgba(43, 41, 95, 0.14),
+    0 4px 14px
+    rgba(43, 41, 95, 0.05);
 }
+
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
 
 .hero-dashboard__card {
   padding: var(--space-lg);
 
-  background: var(--color-surface-soft);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(249, 248, 255, 0.99) 0%,
+      rgba(244, 242, 255, 0.97) 100%
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
 }
 
+
+/* =========================================================
+   PROJECT LIFECYCLE
+   ========================================================= */
+
 .hero-dashboard__lifecycle {
-  background: var(--color-background-alt);
+  padding-bottom: var(--space-xl);
 }
 
 .hero-dashboard__label {
   margin: 0 0 var(--space-sm);
 
-  color: var(--color-text-muted);
+  color: #23204a;
+
   font-size: 0.875rem;
+
   font-weight: 700;
 }
 
 .hero-dashboard__steps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 0.3rem;
+
+  margin-top: var(--space-lg);
 }
 
-.hero-dashboard__steps span {
+.hero-dashboard__step-group {
+  min-width: 0;
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  min-height: 42px;
-  padding: var(--space-sm);
+  flex: 1;
+}
 
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-md);
+.hero-dashboard__step {
+  min-width: 0;
 
-  color: var(--color-text-strong);
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  color:
+    var(--color-primary-dark);
+
   text-align: center;
-  font-size: 0.8rem;
+}
+
+.hero-dashboard__step-icon {
+  color:
+    var(--color-primary);
+}
+
+.hero-dashboard__step span {
+  color: #23204a;
+
+  font-size: 0.74rem;
+
   font-weight: 700;
 }
 
+.hero-dashboard__step-arrow {
+  flex-shrink: 0;
+
+  margin: 0 0.2rem;
+
+  color: #777590;
+}
+
+
+/* =========================================================
+   DASHBOARD SUMMARY GRID
+   ========================================================= */
+
 .hero-dashboard__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
   gap: var(--space-md);
+
   margin-top: var(--space-md);
+}
+
+.hero-dashboard__summary-card {
+  min-height: 104px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-md);
+}
+
+.hero-dashboard__summary-icon {
+  flex: 0 0 auto;
+
+  color:
+    var(--color-primary);
+}
+
+.hero-dashboard__summary-card > div {
+  min-width: 0;
 }
 
 .hero-dashboard strong {
   display: block;
 
-  color: var(--color-text);
-  font-size: 1rem;
+  color: #181442;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
 }
+
+
+/* =========================================================
+   PROJECT STATUS
+   ========================================================= */
 
 .hero-dashboard__status {
   display: flex !important;
+
   align-items: center;
-  gap: var(--space-sm);
+
+  gap: 0.45rem;
 }
 
 .hero-dashboard__status-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+
+  height: 8px;
+
   flex-shrink: 0;
 
-  background: var(--color-success);
+  background:
+    var(--color-success);
+
   border-radius: 50%;
 }
 
 
-/* Responsive */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 1000px) {
+  .hero-section {
+    padding:
+      2.4rem
+      0
+      2rem;
+  }
+
   .hero-section__inner {
     grid-template-columns: 1fr;
+
+    gap:
+      var(--space-2xl);
   }
 
   .hero-section__content {
@@ -168,43 +361,82 @@
   }
 }
 
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 700px) {
   .hero-section {
-    padding: var(--space-2xl) 0;
+    padding:
+      var(--space-2xl)
+      0;
   }
 
   .hero-section h1 {
-    font-size: clamp(2.4rem, 11vw, 3.4rem);
+    font-size:
+      clamp(
+        2.4rem,
+        11vw,
+        3.4rem
+      );
   }
 
-  .hero-dashboard__steps {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .hero-section__description {
+    font-size: 1rem;
 
-  .hero-dashboard__grid {
-    grid-template-columns: 1fr;
+    line-height: 1.7;
   }
 
   .hero-section__actions {
     flex-direction: column;
+
     align-items: stretch;
   }
 
   .hero-section__actions .button {
     width: 100%;
   }
+
+  .hero-dashboard__steps {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    row-gap:
+      var(--space-lg);
+  }
+
+  .hero-dashboard__step-group {
+    flex: 0 0 30%;
+  }
+
+  .hero-dashboard__step-arrow {
+    display: none;
+  }
+
+  .hero-dashboard__grid {
+    grid-template-columns: 1fr;
+  }
 }
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 400px) {
   .hero-dashboard {
-    padding: var(--space-md);
+    padding:
+      var(--space-md);
   }
 
   .hero-dashboard__card {
-    padding: var(--space-md);
+    padding:
+      var(--space-md);
   }
 
-  .hero-dashboard__steps {
-    grid-template-columns: 1fr;
+  .hero-dashboard__step-group {
+    flex-basis: 45%;
   }
 }

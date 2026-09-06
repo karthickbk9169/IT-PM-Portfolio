@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Mail } from 'lucide-react'
 import { Header } from '../components/Header'
 import './PageShell.css'
 
@@ -29,10 +30,13 @@ export function PageShell({ children }: PageShellProps) {
                   className="site-footer__brand-mark"
                   aria-hidden="true"
                 >
-                  K
+                  <span className="site-footer__brand-shape site-footer__brand-shape--left" />
+                  <span className="site-footer__brand-shape site-footer__brand-shape--right" />
                 </span>
 
-                <span>Karthick</span>
+                <span className="site-footer__brand-name">
+                  Karthick
+                </span>
               </Link>
 
               <p>
@@ -45,7 +49,8 @@ export function PageShell({ children }: PageShellProps) {
                 target="_blank"
                 rel="noreferrer"
               >
-                LinkedIn
+                <span aria-hidden="true">in</span>
+                <span>LinkedIn</span>
               </a>
             </div>
 
@@ -74,7 +79,7 @@ export function PageShell({ children }: PageShellProps) {
               <h2>Let&apos;s Connect</h2>
 
               <p>
-                Open to IT Project Manager and Technical Project Manager
+                Open to Technical Project Manager / Scrum Master
                 opportunities.
               </p>
 
@@ -82,7 +87,8 @@ export function PageShell({ children }: PageShellProps) {
                 className="site-footer__cta"
                 to="/contact"
               >
-                Get In Touch
+                <Mail size={17} aria-hidden="true" />
+                <span>Get In Touch</span>
               </Link>
             </div>
 

@@ -2,6 +2,7 @@ using Portfolio.Api.Models;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Api.Data;
 using Portfolio.Api.Features.Projects;
+using Portfolio.Api.Features.Contact;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +22,10 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-    
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
+
 var app = builder.Build();
 
 app.UseCors("FrontendPolicy");
@@ -36,5 +39,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapProjectEndpoints();
+app.MapContactEndpoints();
 
 app.Run();

@@ -9,17 +9,38 @@
 }
 
 
-/* Footer */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .site-footer {
-  background: var(--gradient-footer);
+  position: relative;
+  overflow: hidden;
+
   color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 82% 32%,
+      rgba(93, 74, 255, 0.14) 0%,
+      transparent 30%
+    ),
+    linear-gradient(
+      110deg,
+      #17114f 0%,
+      #15114e 48%,
+      #101852 100%
+    );
 }
 
 .site-footer__inner {
+  position: relative;
+  z-index: 3;
+
   width: min(100% - 2rem, var(--content-max-width));
   margin: 0 auto;
-  padding: var(--space-3xl) 0 var(--space-lg);
+
+  padding: 2.5rem 0 1.25rem;
 }
 
 .site-footer__content {
@@ -28,79 +49,188 @@
   gap: var(--space-2xl);
 }
 
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
 .site-footer__brand-link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 0.55rem;
 
   color: #ffffff;
-  font-size: 1.15rem;
+
+  font-size: 1.2rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
+
   text-decoration: none;
 }
 
 .site-footer__brand-mark {
-  width: 38px;
-  height: 38px;
+  position: relative;
+
+  width: 30px;
+  height: 32px;
+
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.site-footer__brand-shape {
+  position: absolute;
+  top: 4px;
+
+  width: 12px;
+  height: 24px;
+
+  border-radius: 3px;
+
+  transform: skewY(-34deg);
+}
+
+.site-footer__brand-shape--left {
+  left: 1px;
+
+  background: #6d5dfc;
+}
+
+.site-footer__brand-shape--right {
+  right: 2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #8b7cf8 0%,
+      #54a3ff 100%
+    );
+}
+
+.site-footer__brand-name {
+  color: #9284ff;
+}
+
+.site-footer__brand p {
+  max-width: 280px;
+
+  margin: var(--space-md) 0 0;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   LINKEDIN
+   ========================================================= */
+
+.site-footer__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  min-height: 38px;
+
+  margin-top: var(--space-lg);
+  padding: 0.45rem 0.75rem;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(141, 124, 255, 0.72);
+  border-radius: 8px;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.site-footer__linkedin > span:first-child {
+  min-width: 19px;
+  height: 19px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  background: var(--gradient-primary);
-  border-radius: 12px;
+  color: #17114f;
+  background: #a89cff;
 
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 800;
+  border-radius: 3px;
+
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
-.site-footer__brand p,
-.site-footer__connect p {
-  margin: var(--space-md) 0 0;
+.site-footer__linkedin:hover {
+  background: rgba(255, 255, 255, 0.07);
 
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.65;
+  border-color: rgba(170, 157, 255, 0.95);
 }
 
-.site-footer__linkedin {
-  display: inline-block;
-  margin-top: var(--space-lg);
 
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+/* =========================================================
+   FOOTER COLUMNS
+   ========================================================= */
 
 .site-footer__column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-sm);
+
+  gap: 0.55rem;
 }
 
 .site-footer__column h2,
 .site-footer__connect h2 {
-  margin: 0 0 var(--space-sm);
+  margin: 0 0 0.45rem;
 
   color: #ffffff;
+
   font-size: 1rem;
   font-weight: 800;
 }
 
+.site-footer__column a,
+.site-footer__column span {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  line-height: 1.45;
+}
+
 .site-footer__column a {
-  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
 }
 
-.site-footer__column span {
-  color: rgba(255, 255, 255, 0.82);
+.site-footer__column a:hover {
+  color: #ffffff;
 }
 
-.site-footer__column a:hover,
-.site-footer__linkedin:hover {
-  color: #ffffff;
+
+/* =========================================================
+   CONNECT
+   ========================================================= */
+
+.site-footer__connect {
+  position: relative;
+  z-index: 3;
+}
+
+.site-footer__connect p {
+  max-width: 300px;
+
+  margin: var(--space-md) 0 0;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  line-height: 1.65;
 }
 
 .site-footer__cta {
@@ -108,22 +238,59 @@
   align-items: center;
   justify-content: center;
 
+  gap: 0.5rem;
+
   min-height: 44px;
+
   margin-top: var(--space-lg);
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.1rem;
 
-  background: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: var(--radius-md);
+  color: #ffffff;
 
-  color: var(--color-primary-dark);
+  background:
+    linear-gradient(
+      135deg,
+      #6b39f7 0%,
+      #512adb 100%
+    );
+
+  border: 1px solid rgba(160, 143, 255, 0.58);
+  border-radius: 8px;
+
+  box-shadow:
+    0 8px 20px rgba(65, 39, 190, 0.25);
+
   font-weight: 800;
   text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.site-footer__cta svg {
+  width: 17px;
+  height: 17px;
+
+  flex: 0 0 auto;
 }
 
 .site-footer__cta:hover {
-  background: var(--color-primary-light);
+  background:
+    linear-gradient(
+      135deg,
+      #7546ff 0%,
+      #5a31e6 100%
+    );
+
+  box-shadow:
+    0 10px 24px rgba(65, 39, 190, 0.32);
 }
+
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
 
 .site-footer__brand-link:focus-visible,
 .site-footer__linkedin:focus-visible,
@@ -131,34 +298,160 @@
 .site-footer__cta:focus-visible {
   outline: 3px solid #ffffff;
   outline-offset: 4px;
-  border-radius: var(--radius-sm);
+
+  border-radius: 6px;
 }
 
+
+/* =========================================================
+   COPYRIGHT
+   ========================================================= */
+
 .site-footer__bottom {
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-xl);
   padding-top: var(--space-lg);
 
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .site-footer__bottom p {
   margin: 0;
 
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.74);
+
+  font-size: 0.82rem;
 }
 
 
-/* Tablet */
+/* =========================================================
+   LOCKED-DESIGN RIGHT-SIDE DECORATION
+   ========================================================= */
+
+/* Soft dotted field */
+
+.site-footer::before {
+  content: '';
+
+  position: absolute;
+  z-index: 1;
+
+  right: -30px;
+  bottom: -15px;
+
+  width: 280px;
+  height: 180px;
+
+  opacity: 0.16;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(121, 99, 255, 0.95) 1.2px,
+      transparent 1.5px
+    );
+
+  background-size: 11px 11px;
+
+  pointer-events: none;
+
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at 72% 55%,
+      #000 5%,
+      rgba(0, 0, 0, 0.8) 40%,
+      transparent 78%
+    );
+
+  mask-image:
+    radial-gradient(
+      ellipse at 72% 55%,
+      #000 5%,
+      rgba(0, 0, 0, 0.8) 40%,
+      transparent 78%
+    );
+}
+
+
+/* Sparse network lines */
+
+.site-footer::after {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+
+  right: 0;
+  bottom: 0;
+
+  width: 220px;
+  height: 130px;
+
+  opacity: 0.12;
+
+  background:
+    radial-gradient(
+      circle at 20% 75%,
+      #8778ff 0 2px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 45% 42%,
+      #8778ff 0 2px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 71% 70%,
+      #5687ff 0 2px,
+      transparent 2.5px
+    ),
+    radial-gradient(
+      circle at 92% 33%,
+      #8778ff 0 2px,
+      transparent 2.5px
+    ),
+    linear-gradient(
+      30deg,
+      transparent 0 43%,
+      rgba(129, 112, 255, 0.7) 43.3% 43.7%,
+      transparent 44% 100%
+    ),
+    linear-gradient(
+      -31deg,
+      transparent 0 59%,
+      rgba(91, 132, 255, 0.6) 59.3% 59.7%,
+      transparent 60% 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
   .site-footer__content {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .site-footer::before {
+    right: -100px;
+
+    opacity: 0.1;
+  }
+
+  .site-footer::after {
+    right: -65px;
+
+    opacity: 0.08;
+  }
 }
 
 
-/* Mobile */
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
   .site-footer__inner {
@@ -167,6 +460,12 @@
 
   .site-footer__content {
     grid-template-columns: 1fr;
+
     gap: var(--space-xl);
+  }
+
+  .site-footer::before,
+  .site-footer::after {
+    display: none;
   }
 }

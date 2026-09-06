@@ -1,92 +1,292 @@
+/* =========================================================
+   METRICS SECTION
+   ========================================================= */
+
 .metrics-section {
-  padding: 0 0 var(--space-3xl);
-  background: var(--color-background);
+  position: relative;
+  z-index: 2;
+
+  padding: 0 0 2.7rem;
+
+  background: transparent;
 }
 
+
+/* =========================================================
+   METRICS PANEL
+   ========================================================= */
+
 .metrics-section__inner {
-  width: min(100% - 2rem, var(--content-max-width));
+  position: relative;
+
+  width: min(
+    100% - 2rem,
+    var(--content-max-width)
+  );
+
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  background: var(--gradient-primary);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
   overflow: hidden;
+
+  background:
+    linear-gradient(
+      105deg,
+      #5a2ff4 0%,
+      #493cf1 34%,
+      #315be7 68%,
+      #176ddd 100%
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 42px
+    rgba(62, 53, 168, 0.18);
 }
+
+
+/* =========================================================
+   INDIVIDUAL METRIC
+   ========================================================= */
 
 .metric {
   position: relative;
 
-  padding: var(--space-xl) var(--space-lg);
+  min-width: 0;
+  min-height: 132px;
 
-  text-align: center;
+  display: grid;
+
+  /*
+   * Every metric gets exactly the same icon column
+   * and exactly the same text column start.
+   */
+  grid-template-columns: 48px minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: 1rem;
+
+  padding: 1.35rem 1.45rem;
 }
 
-.metric + .metric {
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+/* =========================================================
+   DIVIDERS
+   ========================================================= */
+
+.metric:not(:last-child)::after {
+  content: '';
+
+  position: absolute;
+
+  top: 18%;
+  right: 0;
+
+  width: 1px;
+  height: 64%;
+
+  background:
+    rgba(255, 255, 255, 0.2);
 }
 
-.metric__value {
-  display: block;
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.metric__icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 
   color: #ffffff;
-  font-size: 1.75rem;
-  font-weight: 800;
-  line-height: 1.2;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
 }
+
+
+/* =========================================================
+   TEXT CONTENT
+   ========================================================= */
+
+.metric__content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   VALUE ROW
+
+   IMPORTANT:
+   All four metrics have the same fixed-height value row.
+   ========================================================= */
+
+.metric__value-row {
+  height: 2.25rem;
+
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 0.35rem;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.metric__value {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   YEARS
+
+   "Years" belongs to the value but is deliberately smaller
+   than the number, matching the visual hierarchy of the
+   locked design.
+   ========================================================= */
+
+.metric__suffix {
+  color:
+    rgba(255, 255, 255, 0.94);
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+
+   Because every value row above is exactly 2.25rem high,
+   every description begins at the same vertical position.
+   ========================================================= */
 
 .metric__label {
   display: block;
 
-  margin-top: var(--space-sm);
+  max-width: 175px;
 
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.45;
+  margin-top: 0.15rem;
+
+  color:
+    rgba(255, 255, 255, 0.96);
+
+  font-size: 0.75rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
 }
 
 
-/* Tablet */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .metrics-section__inner {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .metric + .metric {
-    border-left: none;
-  }
-
-  .metric:nth-child(even) {
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .metric:nth-child(n + 3) {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-  }
-}
-
-
-/* Mobile */
-
-@media (max-width: 500px) {
-  .metrics-section__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .metric:nth-child(even) {
-    border-left: none;
-  }
-
-  .metric:nth-child(n + 2) {
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .metric {
-    padding: var(--space-lg);
+    min-height: 132px;
+  }
+
+  .metric:nth-child(2)::after {
+    display: none;
+  }
+
+  .metric:nth-child(-n + 2) {
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.18);
+  }
+
+  .metric__label {
+    max-width: 190px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .metrics-section {
+    padding-bottom: 2rem;
+  }
+
+  .metrics-section__inner {
+    grid-template-columns: 1fr;
+
+    border-radius: 16px;
+  }
+
+  .metric {
+    min-height: 112px;
+
+    grid-template-columns:
+      48px minmax(0, 1fr);
+
+    padding: 1.15rem 1.35rem;
+  }
+
+  .metric:not(:last-child)::after {
+    display: none;
+  }
+
+  .metric:not(:last-child) {
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.18);
+  }
+
+  .metric__label {
+    max-width: none;
   }
 }

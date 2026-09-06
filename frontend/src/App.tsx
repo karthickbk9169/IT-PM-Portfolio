@@ -11,6 +11,8 @@ import { AboutPage } from './features/about/AboutPage'
 import { ProjectsPage } from './features/projects/ProjectsPage'
 import { ArtifactsPage } from './features/artifacts/ArtifactsPage'
 import { ContactPage } from './features/contact/ContactPage'
+import { PeopleFirstCaseStudyPage } from './features/projects/PeopleFirstCaseStudyPage'
+import { PortfolioPlatformCaseStudyPage } from './features/projects/PortfolioPlatformCaseStudyPage'
 
 function App() {
   const [projects, setProjects] = useState<Project[]>([])
@@ -24,7 +26,9 @@ function App() {
         setProjects(data)
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : 'Something went wrong.',
+          err instanceof Error
+            ? err.message
+            : 'Something went wrong.',
         )
       } finally {
         setLoading(false)
@@ -34,13 +38,19 @@ function App() {
     loadProjects()
   }, [])
 
-const featuredProject = projects.find((project) => project.isFeatured)
-
   return (
-    <PageShell>
+  <PageShell>
       <Routes>
-        <Route path="/" element={<HomePage featuredProject={featuredProject} />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route
+          path="/"
+          element={<HomePage />}
+        />
+
+        <Route
+          path="/about"
+          element={<AboutPage />}
+        />
+
         <Route
           path="/projects"
           element={
@@ -51,8 +61,26 @@ const featuredProject = projects.find((project) => project.isFeatured)
             />
           }
         />
-        <Route path="/artifacts" element={<ArtifactsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+
+        <Route
+          path="/projects/peoplefirst"
+          element={<PeopleFirstCaseStudyPage />}
+        />
+
+        <Route
+          path="/projects/portfolio-platform"
+          element={<PortfolioPlatformCaseStudyPage />}
+        />
+
+        <Route
+          path="/artifacts"
+          element={<ArtifactsPage />}
+        />
+
+        <Route
+          path="/contact"
+          element={<ContactPage />}
+        />
       </Routes>
     </PageShell>
   )

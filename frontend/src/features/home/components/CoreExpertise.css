@@ -1,134 +1,458 @@
+/* =========================================================
+   CORE EXPERTISE SECTION
+   ========================================================= */
+
 .expertise-section {
   position: relative;
-  padding: var(--space-3xl) 0;
-  background: var(--color-surface);
-  overflow: hidden;
+
+  padding: 3.6rem 0 4rem;
+
+  overflow: visible;
+
+  background: transparent;
 }
 
+
+/* =========================================================
+   CONTENT CONTAINER
+   ========================================================= */
+
 .expertise-section__inner {
-  width: min(100% - 2rem, var(--content-max-width));
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    100% - 2rem,
+    var(--content-max-width)
+  );
+
   margin: 0 auto;
 }
 
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
 .expertise-section__heading {
   max-width: 760px;
-  margin: 0 auto var(--space-2xl);
+
+  margin: 0 auto 2rem;
+
   text-align: center;
 }
 
 .expertise-section__eyebrow {
   margin: 0 0 var(--space-sm);
-  color: var(--color-primary);
+
+  color: var(--brand-violet, #5b3df5);
+
   font-size: 0.9rem;
+
   font-weight: 800;
+
   letter-spacing: 0.08em;
+
   text-transform: uppercase;
 }
 
 .expertise-section__heading h2 {
   margin: 0;
-  color: var(--color-text);
-  font-size: clamp(2rem, 4vw, 3rem);
+
+  color: #181442;
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    2.6rem
+  );
+
   line-height: 1.1;
+
   letter-spacing: -0.03em;
 }
 
 .expertise-section__heading > p:last-child {
-  margin: var(--space-md) auto 0;
-  max-width: 680px;
-  color: var(--color-text-muted);
-  line-height: 1.7;
+  max-width: 760px;
+
+  margin:
+    var(--space-md)
+    auto
+    0;
+
+  color: #555474;
+
+  line-height: 1.65;
 }
+
+
+/* =========================================================
+   EXPERTISE GRID
+   ========================================================= */
 
 .expertise-section__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 0.65rem;
 }
+
+
+/* =========================================================
+   EXPERTISE CARD
+   ========================================================= */
 
 .expertise-card {
-  padding: var(--space-xl);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 240px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding:
+    1.35rem
+    0.9rem
+    1.9rem;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  border:
+    1px solid
+    rgba(106, 92, 220, 0.14);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 24px
+    rgba(37, 45, 89, 0.065);
+
+  text-align: center;
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+@media (hover: hover) {
+  .expertise-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+      rgba(91, 61, 245, 0.22);
+
+    box-shadow:
+      0 12px 30px
+      rgba(37, 45, 89, 0.09);
+  }
+}
+
+
+/* =========================================================
+   CARD ACCENT LINE
+   ========================================================= */
+
+.expertise-card::after {
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 13px;
+
+  width: 28px;
+
+  height: 3px;
+
+  border-radius: 999px;
+
+  background:
+    var(--brand-violet, #5b3df5);
+
+  transform: translateX(-50%);
+}
+
+.expertise-card:nth-child(2)::after {
+  background:
+    var(--brand-blue, #2563eb);
+}
+
+.expertise-card:nth-child(3)::after {
+  background: #0f766e;
+}
+
+.expertise-card:nth-child(4)::after {
+  background:
+    var(--brand-blue, #2563eb);
+}
+
+.expertise-card:nth-child(5)::after {
+  background:
+    var(--network-violet, #6c5ce7);
+}
+
+.expertise-card:nth-child(6)::after {
+  background: #d946ef;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
 
 .expertise-card__icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: var(--space-lg);
+  width: 62px;
+
+  height: 62px;
+
+  flex-shrink: 0;
+
+  margin-bottom: 0.95rem;
 
   display: inline-flex;
+
   align-items: center;
+
   justify-content: center;
 
-  border-radius: 14px;
-
-  font-size: 1.35rem;
-  font-weight: 800;
+  border-radius: 50%;
 }
 
+.expertise-card__icon svg {
+  width: 29px;
+
+  height: 29px;
+
+  color: inherit;
+
+  stroke: currentColor;
+
+  stroke-width: 2;
+}
+
+
+/* =========================================================
+   ICON COLOURS
+   ========================================================= */
+
 .expertise-card__icon--violet {
-  color: #5b3df5;
-  background: #ede9fe;
+  color:
+    var(--brand-violet, #5b3df5);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f1edff 0%,
+      #e7e1ff 100%
+    );
 }
 
 .expertise-card__icon--blue {
-  color: #2563eb;
-  background: #dbeafe;
+  color:
+    var(--brand-blue, #2563eb);
+
+  background:
+    linear-gradient(
+      145deg,
+      #e8f2ff 0%,
+      #dbeafe 100%
+    );
 }
 
 .expertise-card__icon--teal {
   color: #0f766e;
-  background: #ccfbf1;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e5fbf5 0%,
+      #d0f4e9 100%
+    );
 }
 
 .expertise-card__icon--cobalt {
-  color: #1d4ed8;
-  background: #dbeafe;
+  color:
+    var(--brand-blue, #2563eb);
+
+  background:
+    linear-gradient(
+      145deg,
+      #e9f2ff 0%,
+      #dbeafe 100%
+    );
 }
 
 .expertise-card__icon--magenta {
-  color: #a21caf;
-  background: #fae8ff;
+  color: #b625b9;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fceafa 0%,
+      #f7ddf8 100%
+    );
 }
+
+
+/* =========================================================
+   CARD TYPOGRAPHY
+   ========================================================= */
 
 .expertise-card h3 {
   margin: 0;
-  color: var(--color-text-strong);
-  font-size: 1.1rem;
-  line-height: 1.4;
+
+  color: #181442;
+
+  font-size: 0.96rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
 }
 
 .expertise-card p {
-  margin: var(--space-sm) 0 0;
-  color: var(--color-text-muted);
-  line-height: 1.6;
+  margin: 0.55rem 0 0;
+
+  color: #5d5a78;
+
+  font-size: 0.84rem;
+
+  line-height: 1.55;
 }
 
 
-/* Tablet */
+/* =========================================================
+   SMALL DESKTOP / TABLET LANDSCAPE
+   ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .expertise-section {
+    padding:
+      3.25rem
+      0
+      3.6rem;
+  }
+
   .expertise-section__grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .expertise-card {
+    min-height: 235px;
+
+    padding:
+      1.3rem
+      0.75rem
+      1.9rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 0.92rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.8rem;
   }
 }
 
 
-/* Mobile */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .expertise-section {
-    padding: var(--space-2xl) 0;
+    padding:
+      2.5rem
+      0
+      2.8rem;
+  }
+
+  .expertise-section__heading {
+    margin-bottom: 1.75rem;
+  }
+
+  .expertise-section__grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      var(--space-md);
+  }
+
+  .expertise-card {
+    min-height: 220px;
+
+    padding:
+      1.3rem
+      1rem
+      1.9rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 0.96rem;
+  }
+
+  .expertise-card p {
+    font-size: 0.84rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+  .expertise-section {
+    padding:
+      2rem
+      0
+      2.25rem;
+  }
+
+  .expertise-section__heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .expertise-section__heading h2 {
+    font-size:
+      clamp(
+        1.8rem,
+        8vw,
+        2.15rem
+      );
   }
 
   .expertise-section__grid {
     grid-template-columns: 1fr;
+
+    gap:
+      var(--space-md);
   }
 
   .expertise-card {
-    padding: var(--space-lg);
+    min-height: auto;
+
+    padding:
+      1.25rem
+      var(--space-lg)
+      2rem;
   }
 }

@@ -1,0 +1,2688 @@
+/* =========================================================
+   PORTFOLIO PLATFORM CASE STUDY
+   ========================================================= */
+
+.platform-case-study {
+  --platform-card-background:
+    linear-gradient(
+      135deg,
+      #fdfcff 0%,
+      #f8f7ff 100%
+    );
+
+  --platform-card-border:
+    rgba(91, 61, 245, 0.12);
+
+  --platform-card-shadow:
+    0 7px 22px
+    rgba(37, 45, 89, 0.045);
+
+  position: relative;
+  overflow: hidden;
+
+  min-height: 100vh;
+
+  background: #ffffff;
+}
+
+.platform-case-study__content {
+  position: relative;
+  z-index: 3;
+}
+
+.platform-case-study__inner {
+  position: relative;
+  z-index: 4;
+
+  width:
+    min(
+      1120px,
+      calc(100% - 3rem)
+    );
+
+  margin:
+    0
+    auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.platform-case-study-hero {
+  position: relative;
+
+  padding:
+    7.5rem
+    0
+    4.5rem;
+
+  background: transparent;
+}
+
+.platform-case-study-back {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  color: #68637b;
+
+  font-size: 0.82rem;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.platform-case-study-back:hover {
+  color: #5b3df5;
+
+  transform:
+    translateX(-2px);
+}
+
+.platform-case-study-back:focus-visible {
+  outline:
+    3px solid
+    rgba(91, 61, 245, 0.25);
+
+  outline-offset: 4px;
+
+  border-radius: 4px;
+}
+
+.platform-case-study-hero__eyebrow {
+  margin:
+    2rem
+    0
+    0;
+
+  color: #5b3df5;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+.platform-case-study-hero h1 {
+  max-width: 850px;
+
+  margin:
+    0.75rem
+    0
+    0;
+
+  color: #17133d;
+
+  font-size:
+    clamp(
+      2.4rem,
+      5vw,
+      4.2rem
+    );
+
+  line-height: 1.06;
+
+  letter-spacing: -0.04em;
+}
+
+.platform-case-study-hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #5b3df5,
+      #7d5cff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.platform-case-study-hero__lead {
+  max-width: 830px;
+
+  margin:
+    1.3rem
+    0
+    0;
+
+  color: #625e77;
+
+  font-size:
+    clamp(
+      1rem,
+      1.5vw,
+      1.12rem
+    );
+
+  line-height: 1.75;
+}
+
+.platform-case-study-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap:
+    0.8rem
+    1.4rem;
+
+  margin-top: 1.7rem;
+}
+
+.platform-case-study-hero__meta > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  color: #59556d;
+
+  font-size: 0.79rem;
+  font-weight: 650;
+}
+
+.platform-case-study-hero__meta svg {
+  color: #5b3df5;
+}
+
+.platform-case-study-status i {
+  width: 8px;
+  height: 8px;
+
+  background: #5b3df5;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(91, 61, 245, 0.09);
+}
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.platform-case-study-overview {
+  position: relative;
+
+  padding:
+    4rem
+    0
+    7rem;
+
+  background: transparent;
+}
+
+.platform-section-heading > p {
+  margin: 0;
+
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.platform-section-heading h2 {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #181442;
+
+  font-size:
+    clamp(
+      1.8rem,
+      3vw,
+      2.55rem
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+}
+
+.platform-section-heading__description {
+  max-width: 860px;
+
+  margin:
+    0.85rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SNAPSHOT
+   ========================================================= */
+
+.platform-snapshot {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.platform-snapshot__item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.9rem;
+
+  min-height: 115px;
+
+  padding: 1.25rem;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-snapshot__icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 38px;
+  height: 38px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 9px;
+}
+
+.platform-snapshot__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.platform-snapshot__item div > span {
+  display: block;
+
+  color: #858199;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+}
+
+.platform-snapshot__item strong {
+  display: block;
+
+  margin-top: 0.4rem;
+
+  color: #29244f;
+
+  font-size: 0.88rem;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   DETAIL SECTIONS
+   ========================================================= */
+
+.platform-detail {
+  margin-top: 5rem;
+}
+
+
+/* =========================================================
+   PROJECT OBJECTIVE
+   ========================================================= */
+
+.platform-objective-grid,
+.platform-role-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.platform-objective-card,
+.platform-role-card {
+  min-height: 205px;
+
+  padding: 1.5rem;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-objective-card__number,
+.platform-role-card__number {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  height: 30px;
+
+  padding:
+    0
+    0.45rem;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 7px;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.platform-objective-card h3,
+.platform-role-card h3 {
+  margin:
+    0.9rem
+    0
+    0;
+
+  color: #201c47;
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+}
+
+.platform-objective-card p,
+.platform-role-card p {
+  margin:
+    0.6rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.85rem;
+
+  line-height: 1.62;
+}
+
+
+/* =========================================================
+   DELIVERY APPROACH
+   ========================================================= */
+
+.platform-delivery-flow {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: stretch;
+
+  gap: 0.55rem;
+
+  margin-top: 2rem;
+}
+
+.platform-delivery-step {
+  min-height: 175px;
+
+  padding:
+    1.3rem
+    1rem;
+
+  text-align: center;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-delivery-step > span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 32px;
+  height: 28px;
+
+  padding:
+    0
+    0.4rem;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 7px;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.platform-delivery-step strong {
+  display: block;
+
+  margin-top: 0.75rem;
+
+  color: #201c47;
+
+  font-size: 0.9rem;
+}
+
+.platform-delivery-step p {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #716d84;
+
+  font-size: 0.76rem;
+
+  line-height: 1.5;
+}
+
+.platform-delivery-connector {
+  align-self: center;
+
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   SOLUTION ARCHITECTURE
+   ========================================================= */
+
+.platform-architecture-flow {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: stretch;
+
+  gap: 0.55rem;
+
+  margin-top: 2rem;
+}
+
+.platform-architecture-node {
+  min-height: 180px;
+
+  padding:
+    1.3rem
+    1rem;
+
+  text-align: center;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-architecture-node > span {
+  display: block;
+
+  color: #5b3df5;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.platform-architecture-node strong {
+  display: block;
+
+  margin-top: 0.65rem;
+
+  color: #201c47;
+
+  font-size: 0.9rem;
+
+  line-height: 1.4;
+}
+
+.platform-architecture-node p {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #716d84;
+
+  font-size: 0.76rem;
+
+  line-height: 1.5;
+}
+
+.platform-architecture-connector {
+  align-self: center;
+
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   ARCHITECTURE PRINCIPLES
+   ========================================================= */
+
+.platform-architecture-principles {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 2rem;
+
+  margin-top: 1.2rem;
+
+  padding: 1.6rem;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 16px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-architecture-principles__label {
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.platform-architecture-principles h3 {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #181442;
+
+  font-size: 1.2rem;
+}
+
+.platform-architecture-principles p {
+  margin:
+    0.7rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.84rem;
+
+  line-height: 1.65;
+}
+
+.platform-architecture-principles__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 0.7rem;
+}
+
+.platform-principle {
+  padding: 1rem;
+
+  background:
+    rgba(91, 61, 245, 0.035);
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.09);
+
+  border-radius: 10px;
+}
+
+.platform-principle strong {
+  display: block;
+
+  color: #2a2550;
+
+  font-size: 0.82rem;
+}
+
+.platform-principle span {
+  display: block;
+
+  margin-top: 0.35rem;
+
+  color: #716d84;
+
+  font-size: 0.76rem;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   FRONTEND / BACKEND / DATABASE / GIT
+   ========================================================= */
+
+
+/* =========================================================
+   SHARED TECHNICAL CARDS
+   ========================================================= */
+
+.platform-technical-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.platform-technical-card {
+  min-height: 190px;
+
+  padding: 1.4rem;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-technical-card__label {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+    0.25rem
+    0.55rem;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.07);
+
+  border-radius: 6px;
+
+  font-size: 0.66rem;
+  font-weight: 800;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.platform-technical-card h3 {
+  margin:
+    0.8rem
+    0
+    0;
+
+  color: #201c47;
+
+  font-size: 1rem;
+
+  line-height: 1.35;
+}
+
+.platform-technical-card p {
+  margin:
+    0.55rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.84rem;
+
+  line-height: 1.62;
+}
+
+
+/* =========================================================
+   FRONTEND DELIVERY
+   ========================================================= */
+
+.platform-code-flow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.7rem;
+
+  margin-top: 1.2rem;
+
+  padding:
+    1.15rem
+    1.3rem;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-code-flow span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+
+  padding:
+    0.55rem
+    0.9rem;
+
+  color: #29244f;
+
+  background:
+    rgba(91, 61, 245, 0.055);
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.09);
+
+  border-radius: 8px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.platform-code-flow i {
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   API & BACKEND
+   ========================================================= */
+
+.platform-backend-flow {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: stretch;
+
+  gap: 0.6rem;
+
+  margin-top: 2rem;
+}
+
+.platform-backend-node {
+  min-height: 170px;
+
+  padding:
+    1.25rem
+    1rem;
+
+  text-align: center;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-backend-node > span {
+  display: block;
+
+  color: #5b3df5;
+
+  font-size: 0.66rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.platform-backend-node strong {
+  display: block;
+
+  margin-top: 0.65rem;
+
+  color: #201c47;
+
+  font-size: 0.9rem;
+
+  line-height: 1.35;
+}
+
+.platform-backend-node p {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #716d84;
+
+  font-size: 0.76rem;
+
+  line-height: 1.5;
+}
+
+.platform-backend-connector {
+  align-self: center;
+
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   WORKING INTEGRATION CALLOUT
+   ========================================================= */
+
+.platform-implementation-callout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1.2fr);
+
+  align-items: center;
+
+  gap: 2rem;
+
+  margin-top: 1.2rem;
+
+  padding: 1.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.055),
+      rgba(91, 61, 245, 0.025)
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.13);
+
+  border-radius: 14px;
+}
+
+.platform-implementation-callout__label {
+  color: #5b3df5;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.platform-implementation-callout h3 {
+  margin:
+    0.45rem
+    0
+    0;
+
+  color: #201c47;
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+}
+
+.platform-implementation-callout > p {
+  margin: 0;
+
+  color: #68657d;
+
+  font-size: 0.84rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   DATABASE & DATA
+   ========================================================= */
+
+.platform-data-flow {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: stretch;
+
+  gap: 0.6rem;
+
+  margin-top: 2rem;
+}
+
+.platform-data-node {
+  min-height: 170px;
+
+  padding:
+    1.25rem
+    1rem;
+
+  text-align: center;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-data-node > span {
+  display: block;
+
+  color: #5b3df5;
+
+  font-size: 0.66rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.platform-data-node strong {
+  display: block;
+
+  margin-top: 0.65rem;
+
+  color: #201c47;
+
+  font-size: 0.9rem;
+
+  line-height: 1.35;
+
+  overflow-wrap: anywhere;
+}
+
+.platform-data-node p {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #716d84;
+
+  font-size: 0.76rem;
+
+  line-height: 1.5;
+}
+
+.platform-data-connector {
+  align-self: center;
+
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   DATABASE MIGRATIONS
+   ========================================================= */
+
+.platform-migrations {
+  margin-top: 1.2rem;
+
+  padding: 1.35rem;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-migrations__label {
+  display: block;
+
+  margin-bottom: 0.9rem;
+
+  color: #5b3df5;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-align: center;
+
+  text-transform: uppercase;
+}
+
+.platform-migrations__flow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.7rem;
+}
+
+.platform-migrations__flow span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+
+  padding:
+    0.55rem
+    0.85rem;
+
+  color: #29244f;
+
+  background:
+    rgba(91, 61, 245, 0.055);
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.09);
+
+  border-radius: 8px;
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  text-align: center;
+}
+
+.platform-migrations__flow i {
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   GIT & GITHUB
+   ========================================================= */
+
+.platform-git-layout {
+  margin-top: 2rem;
+}
+
+.platform-git-flow {
+  display: grid;
+
+  grid-template-columns:
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr auto
+    1fr;
+
+  align-items: stretch;
+
+  gap: 0.55rem;
+}
+
+.platform-git-step {
+  min-height: 165px;
+
+  padding:
+    1.25rem
+    0.9rem;
+
+  text-align: center;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-git-step > span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 32px;
+  height: 28px;
+
+  padding:
+    0
+    0.4rem;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 7px;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+}
+
+.platform-git-step strong {
+  display: block;
+
+  margin-top: 0.7rem;
+
+  color: #201c47;
+
+  font-size: 0.88rem;
+}
+
+.platform-git-step p {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #716d84;
+
+  font-size: 0.75rem;
+
+  line-height: 1.5;
+}
+
+.platform-git-connector {
+  align-self: center;
+
+  color:
+    rgba(91, 61, 245, 0.5);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   GIT CALLOUT
+   ========================================================= */
+
+.platform-git-callout {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 1.2rem;
+
+  padding:
+    1.35rem
+    1.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.055),
+      rgba(91, 61, 245, 0.025)
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.13);
+
+  border-radius: 14px;
+}
+
+.platform-git-callout > svg {
+  flex: 0 0 auto;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 10px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 10px;
+}
+
+.platform-git-callout span {
+  display: block;
+
+  color: #5b3df5;
+
+  font-size: 0.66rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.platform-git-callout h3 {
+  margin:
+    0.3rem
+    0
+    0;
+
+  color: #201c47;
+
+  font-size: 1rem;
+}
+
+.platform-git-callout p {
+  margin:
+    0.4rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   QUALITY & ACCESSIBILITY
+   ========================================================= */
+
+.platform-quality-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.platform-quality-card {
+  min-height: 178px;
+
+  padding:
+    22px
+    24px;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-quality-card > span {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 13px;
+
+  padding:
+    5px
+    9px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 5px;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
+}
+
+.platform-quality-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #17163d;
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+.platform-quality-card p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   VALIDATION APPROACH
+   ========================================================= */
+
+.platform-validation {
+  margin-top: 18px;
+
+  padding:
+    24px
+    26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.055) 0%,
+      rgba(91, 61, 245, 0.025) 100%
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 7px 22px
+    rgba(37, 45, 89, 0.035);
+}
+
+.platform-validation__label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+.platform-validation h3 {
+  margin:
+    0
+    0
+    16px;
+
+  color: #17163d;
+
+  font-size: 1.05rem;
+  font-weight: 750;
+
+  line-height: 1.35;
+}
+
+.platform-validation__tools {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-bottom: 15px;
+}
+
+.platform-validation__tools span {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    7px
+    11px;
+
+  color: #3d347c;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.12);
+
+  border-radius: 7px;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.platform-validation > p {
+  max-width: 900px;
+
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   AI-ASSISTED DELIVERY
+   ========================================================= */
+
+.platform-ai-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.platform-ai-card {
+  min-height: 182px;
+
+  padding:
+    22px
+    24px;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-ai-card > span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 30px;
+  height: 26px;
+
+  margin-bottom: 13px;
+
+  padding:
+    0
+    8px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 6px;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.platform-ai-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #17163d;
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+.platform-ai-card p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   HUMAN-LED AI CALLOUT
+   ========================================================= */
+
+.platform-ai-callout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 32px;
+
+  align-items: center;
+
+  margin-top: 18px;
+
+  padding:
+    25px
+    27px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.07) 0%,
+      rgba(124, 92, 255, 0.035) 100%
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
+}
+
+.platform-ai-callout > div > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+.platform-ai-callout h3 {
+  margin: 0;
+
+  color: #17163d;
+
+  font-size: 1.05rem;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+.platform-ai-callout > p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   AZURE DEPLOYMENT FLOW
+   ========================================================= */
+
+.platform-cloud-flow {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr)
+    auto
+    minmax(0, 1fr);
+
+  gap: 10px;
+
+  align-items: stretch;
+
+  margin-top: 30px;
+}
+
+.platform-cloud-node {
+  min-height: 164px;
+
+  padding:
+    21px
+    18px;
+
+  text-align: center;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-cloud-node > span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #5b3df5;
+
+  font-size: 0.71rem;
+  font-weight: 800;
+
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
+}
+
+.platform-cloud-node strong {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #17163d;
+
+  font-size: 0.96rem;
+  font-weight: 750;
+
+  line-height: 1.35;
+}
+
+.platform-cloud-node p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.82rem;
+
+  line-height: 1.55;
+}
+
+.platform-cloud-connector {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #8b7cf6;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   DEPLOYMENT CARDS
+   ========================================================= */
+
+.platform-deployment-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.platform-deployment-card {
+  padding:
+    22px
+    24px;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-deployment-card > span {
+  display: inline-flex;
+
+  margin-bottom: 12px;
+
+  padding:
+    5px
+    9px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 5px;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
+}
+
+.platform-deployment-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #17163d;
+
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.platform-deployment-card p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   DEPLOYMENT STATUS
+   ========================================================= */
+
+.platform-deployment-status {
+  display: grid;
+
+  grid-template-columns:
+    auto
+    auto
+    minmax(0, 1fr);
+
+  gap: 20px;
+
+  align-items: center;
+
+  margin-top: 18px;
+
+  padding:
+    20px
+    24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.055) 0%,
+      rgba(91, 61, 245, 0.025) 100%
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
+}
+
+.platform-deployment-status > span {
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
+}
+
+.platform-deployment-status > strong {
+  padding:
+    7px
+    11px;
+
+  color: #4c3bc5;
+
+  background:
+    rgba(91, 61, 245, 0.08);
+
+  border-radius: 7px;
+
+  font-size: 0.82rem;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.platform-deployment-status > p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.86rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CURRENT STATUS
+   ========================================================= */
+
+.platform-status-summary {
+  display: grid;
+
+  grid-template-columns:
+    minmax(190px, 0.35fr)
+    minmax(0, 1fr);
+
+  gap: 30px;
+
+  align-items: center;
+
+  margin-top: 30px;
+
+  padding:
+    24px
+    26px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.055) 0%,
+      rgba(91, 61, 245, 0.025) 100%
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
+}
+
+.platform-status-summary > div > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+.platform-status-summary > div > strong {
+  display: block;
+
+  color: #17163d;
+
+  font-size: 1.18rem;
+  font-weight: 800;
+}
+
+.platform-status-summary > p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROGRESS ESTABLISHED
+   ========================================================= */
+
+.platform-progress-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.platform-progress-card {
+  min-height: 180px;
+
+  padding:
+    22px
+    24px;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-progress-card > span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 30px;
+  height: 26px;
+
+  margin-bottom: 13px;
+
+  padding:
+    0
+    8px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 6px;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.platform-progress-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #17163d;
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+.platform-progress-card p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TECHNICAL EVIDENCE
+   ========================================================= */
+
+.platform-evidence-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+.platform-evidence-card {
+  min-height: 180px;
+
+  padding:
+    22px
+    24px;
+
+  background:
+    var(--platform-card-background);
+
+  border:
+    1px solid
+    var(--platform-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--platform-card-shadow);
+}
+
+.platform-evidence-card > span {
+  display: inline-flex;
+
+  margin-bottom: 13px;
+
+  padding:
+    5px
+    9px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 5px;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.035em;
+
+  text-transform: uppercase;
+}
+
+.platform-evidence-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #17163d;
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  line-height: 1.3;
+}
+
+.platform-evidence-card p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   END-TO-END OWNERSHIP CALLOUT
+   ========================================================= */
+
+.platform-evidence-callout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 32px;
+
+  align-items: center;
+
+  margin-top: 18px;
+
+  padding:
+    26px
+    28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.07) 0%,
+      rgba(124, 92, 255, 0.035) 100%
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
+}
+
+.platform-evidence-callout > div > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+.platform-evidence-callout h3 {
+  margin: 0;
+
+  color: #17163d;
+
+  font-size: 1.05rem;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+.platform-evidence-callout > p {
+  margin: 0;
+
+  color: #65657d;
+
+  font-size: 0.89rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FINAL SECTION
+   ========================================================= */
+
+.platform-detail--last {
+  padding-bottom: 76px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100PX
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .platform-snapshot,
+  .platform-objective-grid,
+  .platform-role-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-delivery-flow,
+  .platform-architecture-flow {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+  .platform-delivery-connector,
+  .platform-architecture-connector {
+    display: none;
+  }
+
+  .platform-technical-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-git-flow {
+    grid-template-columns:
+      repeat(5, minmax(0, 1fr));
+  }
+
+  .platform-git-connector {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900PX
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .platform-backend-flow,
+  .platform-data-flow {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+  }
+
+  .platform-backend-connector,
+  .platform-data-connector {
+    display: none;
+  }
+
+  .platform-git-flow {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+  }
+
+  .platform-implementation-callout {
+    grid-template-columns: 1fr;
+
+    gap: 0.7rem;
+  }
+
+  .platform-quality-grid,
+  .platform-ai-grid,
+  .platform-progress-grid,
+  .platform-evidence-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-cloud-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-cloud-connector {
+    min-height: 20px;
+
+    transform:
+      rotate(90deg);
+  }
+
+  .platform-ai-callout,
+  .platform-evidence-callout {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .platform-deployment-status {
+    grid-template-columns:
+      auto
+      1fr;
+  }
+
+  .platform-deployment-status > p {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 800PX
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .platform-case-study__inner {
+    width:
+      min(
+        100% - 2rem,
+        1120px
+      );
+  }
+
+  .platform-architecture-principles {
+    grid-template-columns: 1fr;
+
+    gap: 1rem;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700PX
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .platform-case-study-hero {
+    padding:
+      6.5rem
+      0
+      3.5rem;
+  }
+
+  .platform-case-study-overview {
+    padding-top: 3rem;
+  }
+
+  .platform-detail {
+    margin-top: 4rem;
+  }
+
+  .platform-delivery-flow,
+  .platform-architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-technical-grid,
+  .platform-backend-flow,
+  .platform-data-flow,
+  .platform-git-flow,
+  .platform-quality-grid,
+  .platform-ai-grid,
+  .platform-deployment-grid,
+  .platform-progress-grid,
+  .platform-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-technical-card,
+  .platform-backend-node,
+  .platform-data-node,
+  .platform-git-step {
+    min-height: auto;
+  }
+
+  .platform-code-flow,
+  .platform-migrations__flow {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .platform-code-flow span,
+  .platform-migrations__flow span {
+    width: 100%;
+  }
+
+  .platform-code-flow i,
+  .platform-migrations__flow i {
+    transform:
+      rotate(90deg);
+
+    align-self: center;
+  }
+
+  .platform-status-summary {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+  .platform-quality-card,
+  .platform-ai-card,
+  .platform-progress-card,
+  .platform-evidence-card {
+    min-height: 0;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 560PX
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .platform-case-study__inner {
+    width:
+      calc(100% - 1.5rem);
+  }
+
+  .platform-snapshot,
+  .platform-objective-grid,
+  .platform-role-grid,
+  .platform-architecture-principles__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-objective-card,
+  .platform-role-card {
+    min-height: auto;
+  }
+
+  .platform-implementation-callout,
+  .platform-git-callout,
+  .platform-migrations {
+    padding: 1.15rem;
+  }
+
+  .platform-git-callout {
+    align-items: flex-start;
+  }
+
+  .platform-quality-card,
+  .platform-ai-card,
+  .platform-deployment-card,
+  .platform-progress-card,
+  .platform-evidence-card {
+    padding: 20px;
+  }
+
+  .platform-validation,
+  .platform-ai-callout,
+  .platform-status-summary,
+  .platform-evidence-callout {
+    padding: 21px;
+  }
+
+  .platform-validation__tools {
+    gap: 7px;
+  }
+
+  .platform-validation__tools span {
+    padding:
+      6px
+      9px;
+
+    font-size: 0.74rem;
+  }
+
+  .platform-deployment-status {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 20px;
+  }
+
+  .platform-deployment-status > strong {
+    justify-self: start;
+  }
+
+  .platform-deployment-status > p {
+    grid-column: auto;
+  }
+
+  .platform-cloud-node {
+    min-height: 0;
+  }
+
+  .platform-detail--last {
+    padding-bottom: 54px;
+  }
+
+}

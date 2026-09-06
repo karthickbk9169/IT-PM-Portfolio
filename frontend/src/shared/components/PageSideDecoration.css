@@ -1,0 +1,659 @@
+/* =========================================================
+   PAGE SIDE DECORATION
+   ---------------------------------------------------------
+   Shared decorative side treatment:
+   - matching lavender/violet family on both sides
+   - broad translucent diagonal panels
+   - thin white diagonal lines
+   - sparse dot matrices
+   - translucent circles
+   - outlined circles
+   - soft violet glows
+
+   Designed to remain visible behind long page content while
+   staying outside the main content area.
+   ========================================================= */
+
+.page-side-decoration {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  user-select: none;
+}
+
+
+/* =========================================================
+   SIDE PANELS
+   ========================================================= */
+
+.page-side-decoration__panel {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  width:
+    clamp(
+      155px,
+      11vw,
+      215px
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LEFT PANEL
+   ========================================================= */
+
+.page-side-decoration__panel--left {
+  left: 0;
+
+  background:
+    linear-gradient(
+      105deg,
+      rgba(112, 83, 255, 0.24) 0%,
+      rgba(131, 103, 255, 0.18) 30%,
+      rgba(168, 149, 255, 0.11) 57%,
+      rgba(222, 216, 255, 0.045) 76%,
+      transparent 77%
+    );
+
+  clip-path:
+    polygon(
+      0 0,
+      67% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+   ---------------------------------------------------------
+   Uses the same lavender/violet family as the left panel.
+   ========================================================= */
+
+.page-side-decoration__panel--right {
+  right: 0;
+
+  background:
+    linear-gradient(
+      255deg,
+      rgba(112, 83, 255, 0.24) 0%,
+      rgba(131, 103, 255, 0.18) 30%,
+      rgba(168, 149, 255, 0.11) 57%,
+      rgba(222, 216, 255, 0.045) 76%,
+      transparent 77%
+    );
+
+  clip-path:
+    polygon(
+      33% 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+
+/* =========================================================
+   SUBTLE REPEATING TEXTURE
+   ---------------------------------------------------------
+   Helps the rails continue visually on very long pages.
+   This remains intentionally faint.
+   ========================================================= */
+
+.page-side-decoration__panel--left::after,
+.page-side-decoration__panel--right::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.24;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(91, 61, 245, 0.45) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    28px
+    28px;
+
+  -webkit-mask-image:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 8%,
+      #000 22%,
+      transparent 31%,
+      transparent 48%,
+      #000 57%,
+      #000 69%,
+      transparent 79%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      #000 8%,
+      #000 22%,
+      transparent 31%,
+      transparent 48%,
+      #000 57%,
+      #000 69%,
+      transparent 79%,
+      transparent 100%
+    );
+}
+
+
+/* =========================================================
+   DIAGONAL WHITE LINES
+   ========================================================= */
+
+.page-side-decoration__line {
+  position: absolute;
+
+  top: -2%;
+
+  display: block;
+
+  width: 2px;
+  height: 104%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.72) 22%,
+      rgba(255, 255, 255, 0.42) 52%,
+      rgba(255, 255, 255, 0.25) 78%,
+      transparent 100%
+    );
+
+  opacity: 0.7;
+
+  transform-origin:
+    top
+    center;
+}
+
+
+/* LEFT LINE */
+
+.page-side-decoration__line--left {
+  left: 34px;
+
+  transform:
+    rotate(-7deg);
+}
+
+
+/* RIGHT LINE */
+
+.page-side-decoration__line--right {
+  right: 34px;
+
+  transform:
+    rotate(7deg);
+}
+
+
+/* =========================================================
+   DOT MATRICES
+   ========================================================= */
+
+.page-side-decoration__dots {
+  position: absolute;
+
+  display: block;
+
+  width: 82px;
+  height: 132px;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(91, 61, 245, 0.52) 1.35px,
+      transparent 1.8px
+    );
+
+  background-size:
+    24px
+    24px;
+
+  opacity: 0.48;
+}
+
+
+/* LEFT DOTS */
+
+.page-side-decoration__dots--left {
+  top: 8%;
+
+  left: 46px;
+}
+
+
+/* RIGHT DOTS */
+
+.page-side-decoration__dots--right {
+  top: 9%;
+
+  right: 43px;
+}
+
+
+/* =========================================================
+   ADDITIONAL DOT CLUSTERS FOR LONG PAGES
+   ---------------------------------------------------------
+   Generated from the existing dot elements so no TSX changes
+   are required.
+   ========================================================= */
+
+.page-side-decoration__dots::before,
+.page-side-decoration__dots::after {
+  content: '';
+
+  position: absolute;
+
+  display: block;
+
+  width: 70px;
+  height: 110px;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(91, 61, 245, 0.38) 1.25px,
+      transparent 1.7px
+    );
+
+  background-size:
+    24px
+    24px;
+}
+
+.page-side-decoration__dots::before {
+  top: 250vh;
+}
+
+.page-side-decoration__dots::after {
+  top: 500vh;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   CIRCLES
+   ========================================================= */
+
+.page-side-decoration__circle {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   SMALL TRANSLUCENT CIRCLES
+   ========================================================= */
+
+.page-side-decoration__circle--left-top {
+  top: 28%;
+
+  left: 62px;
+
+  width: 50px;
+  height: 50px;
+
+  background:
+    rgba(111, 83, 255, 0.14);
+}
+
+.page-side-decoration__circle--right-top {
+  top: 28%;
+
+  right: 62px;
+
+  width: 50px;
+  height: 50px;
+
+  background:
+    rgba(111, 83, 255, 0.14);
+}
+
+
+/* =========================================================
+   LARGE OUTLINED CIRCLES
+   ========================================================= */
+
+.page-side-decoration__circle--left-outline {
+  top: 55%;
+
+  left: -73px;
+
+  width: 155px;
+  height: 155px;
+
+  border:
+    2px solid
+    rgba(104, 93, 255, 0.25);
+}
+
+.page-side-decoration__circle--right-outline {
+  top: 55%;
+
+  right: -73px;
+
+  width: 155px;
+  height: 155px;
+
+  border:
+    2px solid
+    rgba(104, 93, 255, 0.25);
+}
+
+
+/* =========================================================
+   EXTRA DECORATIVE RINGS
+   ---------------------------------------------------------
+   Creates another subtle ring farther down long pages without
+   adding more TSX elements.
+   ========================================================= */
+
+.page-side-decoration__circle--left-outline::after,
+.page-side-decoration__circle--right-outline::after {
+  content: '';
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border:
+    1px solid
+    rgba(104, 93, 255, 0.16);
+
+  border-radius: 50%;
+}
+
+.page-side-decoration__circle--left-outline::after {
+  top: 220vh;
+
+  left: 26px;
+}
+
+.page-side-decoration__circle--right-outline::after {
+  top: 220vh;
+
+  right: 26px;
+}
+
+
+/* =========================================================
+   LOWER GLOWS
+   ========================================================= */
+
+.page-side-decoration__glow {
+  position: absolute;
+
+  top: 78%;
+
+  display: block;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(106, 77, 255, 0.27);
+
+  filter:
+    blur(14px);
+
+  opacity: 0.68;
+}
+
+.page-side-decoration__glow--left {
+  left: 53px;
+}
+
+.page-side-decoration__glow--right {
+  right: 53px;
+}
+
+
+/* =========================================================
+   SECONDARY LOWER GLOW
+   ========================================================= */
+
+.page-side-decoration__glow::after {
+  content: '';
+
+  position: absolute;
+
+  top: 180vh;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(106, 77, 255, 0.2);
+
+  filter:
+    blur(12px);
+}
+
+
+/* =========================================================
+   IMPORTANT PAGE LAYERING
+   ---------------------------------------------------------
+   Decorative rails sit above section backgrounds but outside
+   the central reading area.
+
+   Actual page content remains above the decoration.
+   ========================================================= */
+
+.case-study-page__content {
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   ALLOW DECORATION TO REMAIN VISIBLE THROUGH PAGE SIDES
+   ---------------------------------------------------------
+   The outer case-study layer should not create an opaque
+   full-width cover above the decoration.
+   ========================================================= */
+
+.case-study-overview {
+  position: relative;
+
+  background:
+    transparent;
+}
+
+
+/* =========================================================
+   CENTRAL CONTENT CANVAS
+   ---------------------------------------------------------
+   Maintains a clean white reading area while allowing the
+   side rails to remain visible.
+   ========================================================= */
+
+.case-study__inner {
+  position: relative;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   WIDE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+  .page-side-decoration__panel {
+    width: 215px;
+  }
+
+  .page-side-decoration__dots--left {
+    left: 50px;
+  }
+
+  .page-side-decoration__dots--right {
+    right: 47px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .page-side-decoration__panel {
+    width: 145px;
+
+    opacity: 0.82;
+  }
+
+
+  .page-side-decoration__dots {
+    opacity: 0.38;
+  }
+
+
+  .page-side-decoration__circle--left-top {
+    left: 42px;
+  }
+
+
+  .page-side-decoration__circle--right-top {
+    right: 42px;
+  }
+
+
+  .page-side-decoration__glow--left {
+    left: 35px;
+  }
+
+
+  .page-side-decoration__glow--right {
+    right: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .page-side-decoration__panel {
+    width: 95px;
+
+    opacity: 0.52;
+  }
+
+
+  .page-side-decoration__line {
+    opacity: 0.42;
+  }
+
+
+  .page-side-decoration__dots {
+    width: 55px;
+    height: 90px;
+
+    background-size:
+      20px
+      20px;
+
+    opacity: 0.26;
+  }
+
+
+  .page-side-decoration__dots::before,
+  .page-side-decoration__dots::after {
+    display: none;
+  }
+
+
+  .page-side-decoration__dots--left {
+    left: 14px;
+  }
+
+
+  .page-side-decoration__dots--right {
+    right: 10px;
+  }
+
+
+  .page-side-decoration__circle--left-top,
+  .page-side-decoration__circle--right-top,
+  .page-side-decoration__glow {
+    display: none;
+  }
+
+
+  .page-side-decoration__circle--left-outline {
+    left: -120px;
+  }
+
+
+  .page-side-decoration__circle--right-outline {
+    right: -120px;
+  }
+
+
+  .page-side-decoration__circle--left-outline::after,
+  .page-side-decoration__circle--right-outline::after {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .page-side-decoration {
+    display: none;
+  }
+
+}

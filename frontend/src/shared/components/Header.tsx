@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { UserRound } from 'lucide-react'
 import './Header.css'
 import { Navigation } from './Navigation'
 
@@ -15,8 +16,12 @@ export function Header() {
           to="/"
           aria-label="Karthick — Home"
         >
-          <span className="site-header__brand-mark" aria-hidden="true">
-            K
+          <span
+            className="site-header__brand-mark"
+            aria-hidden="true"
+          >
+            <span className="site-header__brand-shape site-header__brand-shape--left" />
+            <span className="site-header__brand-shape site-header__brand-shape--right" />
           </span>
 
           <span className="site-header__brand-name">
@@ -46,7 +51,12 @@ export function Header() {
             className="site-header__cta"
             to="/contact"
           >
-            Let&apos;s Connect
+            <UserRound
+              size={18}
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+            <span>Let&apos;s Connect</span>
           </Link>
         </div>
 

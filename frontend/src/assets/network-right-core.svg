@@ -1,0 +1,77 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="280"
+  height="430"
+  viewBox="0 0 280 430"
+  fill="none"
+>
+  <g opacity="0.62" stroke="#6C5CF6" stroke-width="1">
+
+    <!-- upper network -->
+    <path d="M280 35 L235 59 L197 31 L156 74 L111 48" />
+    <path d="M235 59 L249 115 L201 143 L156 74" />
+    <path d="M201 143 L242 184 L188 218 L147 173" />
+    <path d="M156 74 L147 173 L102 128" />
+
+    <!-- middle network -->
+    <path d="M147 173 L105 218 L61 187" />
+    <path d="M188 218 L218 273 L164 301 L105 218" />
+    <path d="M61 187 L27 238 L72 278 L105 218" />
+
+    <!-- lower network -->
+    <path d="M72 278 L113 333 L164 301" />
+    <path d="M113 333 L80 384 L139 410" />
+    <path d="M164 301 L207 354 L259 324" />
+    <path d="M207 354 L139 410" />
+
+    <!-- outward connections -->
+    <path d="M197 31 L183 0" />
+    <path d="M111 48 L76 13" />
+    <path d="M249 115 L280 139" />
+    <path d="M242 184 L280 201" />
+    <path d="M27 238 L0 211" />
+    <path d="M72 278 L0 299" />
+    <path d="M259 324 L280 369" />
+    <path d="M139 410 L136 430" />
+  </g>
+
+  <!-- nodes -->
+  <g fill="#FFFFFF" stroke="#5B3DF5" stroke-width="1.5">
+    <circle cx="235" cy="59" r="3.4" />
+    <circle cx="197" cy="31" r="3.4" />
+    <circle cx="156" cy="74" r="3.4" />
+    <circle cx="111" cy="48" r="3.4" />
+
+    <circle cx="249" cy="115" r="3.4" />
+    <circle cx="201" cy="143" r="3.4" />
+    <circle cx="147" cy="173" r="3.4" />
+    <circle cx="102" cy="128" r="3.4" />
+
+    <circle cx="242" cy="184" r="3.4" />
+    <circle cx="188" cy="218" r="3.4" />
+    <circle cx="105" cy="218" r="3.4" />
+    <circle cx="61" cy="187" r="3.4" />
+
+    <circle cx="218" cy="273" r="3.4" />
+    <circle cx="164" cy="301" r="3.4" />
+    <circle cx="72" cy="278" r="3.4" />
+    <circle cx="27" cy="238" r="3.4" />
+
+    <circle cx="113" cy="333" r="3.4" />
+    <circle cx="207" cy="354" r="3.4" />
+    <circle cx="259" cy="324" r="3.4" />
+    <circle cx="80" cy="384" r="3.4" />
+    <circle cx="139" cy="410" r="3.4" />
+  </g>
+
+  <!-- stronger accent nodes -->
+  <g fill="#6C5CF6">
+    <circle cx="235" cy="59" r="2" />
+    <circle cx="201" cy="143" r="2" />
+    <circle cx="147" cy="173" r="2" />
+    <circle cx="188" cy="218" r="2" />
+    <circle cx="72" cy="278" r="2" />
+    <circle cx="164" cy="301" r="2" />
+    <circle cx="207" cy="354" r="2" />
+  </g>
+</svg>

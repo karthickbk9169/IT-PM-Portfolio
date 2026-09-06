@@ -1,0 +1,726 @@
+/* =========================================================
+   ARTIFACTS PAGE
+   ========================================================= */
+
+.artifacts-page {
+  --artifact-card-background:
+    linear-gradient(
+      135deg,
+      #fdfcff 0%,
+      #f8f7ff 100%
+    );
+
+  --artifact-card-border:
+    rgba(91, 61, 245, 0.12);
+
+  --artifact-card-shadow:
+    0 7px 22px
+    rgba(37, 45, 89, 0.045);
+
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.artifacts-page__content {
+  position: relative;
+  z-index: 3;
+}
+
+.artifacts-section__inner {
+  position: relative;
+  z-index: 4;
+
+  width:
+    min(
+      1120px,
+      calc(100% - 3rem)
+    );
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.artifacts-hero {
+  position: relative;
+
+  padding:
+    7.5rem
+    0
+    4.5rem;
+
+  background: transparent;
+}
+
+.artifacts-hero__eyebrow {
+  margin: 0;
+
+  color: #5b3df5;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.artifacts-hero h1 {
+  max-width: 800px;
+
+  margin:
+    0.7rem
+    0
+    0;
+
+  color: #17133d;
+
+  font-size:
+    clamp(
+      2.5rem,
+      5vw,
+      4.1rem
+    );
+
+  line-height: 1.06;
+
+  letter-spacing: -0.04em;
+}
+
+.artifacts-hero h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #5b3df5,
+      #7d5cff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.artifacts-hero__lead {
+  max-width: 850px;
+
+  margin:
+    1.25rem
+    0
+    0;
+
+  color: #625e77;
+
+  font-size:
+    clamp(
+      1rem,
+      1.5vw,
+      1.1rem
+    );
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   LIBRARY
+   ========================================================= */
+
+.artifacts-library {
+  position: relative;
+
+  padding:
+    4rem
+    0
+    6rem;
+
+  background: transparent;
+}
+
+.artifacts-section-heading > p {
+  margin: 0;
+
+  color: #5b3df5;
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.artifacts-section-heading h2 {
+  margin:
+    0.5rem
+    0
+    0;
+
+  color: #181442;
+
+  font-size:
+    clamp(
+      1.8rem,
+      3vw,
+      2.55rem
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+}
+
+.artifacts-section-heading__description {
+  max-width: 880px;
+
+  margin:
+    0.85rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJECT CONTEXT NOTE
+   ========================================================= */
+
+.artifacts-project-note {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 0.7fr)
+    auto
+    minmax(0, 1.3fr);
+
+  align-items: center;
+
+  gap: 1.4rem;
+
+  margin-top: 2rem;
+
+  padding:
+    1.35rem
+    1.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.06),
+      rgba(91, 61, 245, 0.025)
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 14px;
+}
+
+.artifacts-project-note > div:first-child span {
+  display: block;
+
+  color: #5b3df5;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.artifacts-project-note > div:first-child strong {
+  display: block;
+
+  margin-top: 0.35rem;
+
+  color: #201c47;
+
+  font-size: 0.92rem;
+}
+
+.artifacts-project-note__status {
+  padding:
+    0.45rem
+    0.7rem;
+
+  color: #4c3bc5;
+
+  background:
+    rgba(91, 61, 245, 0.08);
+
+  border-radius: 7px;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+.artifacts-project-note > p {
+  margin: 0;
+
+  color: #68657d;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   ARTIFACT GROUP
+   ========================================================= */
+
+.artifact-group {
+  margin-top: 4.5rem;
+}
+
+.artifact-group__heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0.9rem;
+
+  margin-bottom: 1.4rem;
+}
+
+.artifact-group__heading > span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  min-width: 35px;
+  height: 31px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 7px;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.artifact-group__heading p {
+  margin: 0;
+
+  color: #5b3df5;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.artifact-group__heading h3 {
+  margin:
+    0.3rem
+    0
+    0;
+
+  color: #201c47;
+
+  font-size: 1.2rem;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   ARTIFACT GRID
+   ========================================================= */
+
+.artifacts-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+.artifact-card {
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 225px;
+
+  padding: 1.45rem;
+
+  background:
+    var(--artifact-card-background);
+
+  border:
+    1px solid
+    var(--artifact-card-border);
+
+  border-radius: 14px;
+
+  box-shadow:
+    var(--artifact-card-shadow);
+}
+
+.artifact-card__top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.65rem;
+}
+
+.artifact-card__icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 36px;
+  height: 36px;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.075);
+
+  border-radius: 8px;
+}
+
+.artifact-card__type {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 26px;
+
+  padding:
+    0.25rem
+    0.55rem;
+
+  color: #5b3df5;
+
+  background:
+    rgba(91, 61, 245, 0.06);
+
+  border-radius: 6px;
+
+  font-size: 0.66rem;
+  font-weight: 800;
+
+  letter-spacing: 0.055em;
+
+  text-transform: uppercase;
+}
+
+.artifact-card h3,
+.artifact-card h4 {
+  margin:
+    1rem
+    0
+    0;
+
+  color: #201c47;
+
+  font-size: 1rem;
+  font-weight: 750;
+
+  line-height: 1.4;
+}
+
+.artifact-card p {
+  margin:
+    0.6rem
+    0
+    0;
+
+  color: #68657d;
+
+  font-size: 0.84rem;
+
+  line-height: 1.65;
+}
+
+.artifact-card__footer {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: auto;
+
+  padding-top: 1.15rem;
+}
+
+.artifact-card__footer span {
+  color: #77728e;
+
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   PORTFOLIO PLATFORM ARTIFACTS
+   ========================================================= */
+
+.artifacts-platform {
+  position: relative;
+
+  padding:
+    5.5rem
+    0;
+
+  background: transparent;
+}
+
+.artifacts-grid--platform {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  margin-top: 2rem;
+}
+
+.artifacts-grid--platform .artifact-card {
+  min-height: 250px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY PANEL
+   ========================================================= */
+
+.artifacts-accessibility {
+  position: relative;
+
+  padding:
+    5rem
+    0
+    7rem;
+
+  background: transparent;
+}
+
+.artifacts-accessibility__panel {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1.2fr);
+
+  gap: 2.5rem;
+
+  padding:
+    2rem
+    2.2rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 61, 245, 0.07),
+      rgba(124, 92, 255, 0.03)
+    );
+
+  border:
+    1px solid
+    rgba(91, 61, 245, 0.14);
+
+  border-radius: 16px;
+}
+
+.artifacts-accessibility__panel > div:first-child > p {
+  margin: 0;
+
+  color: #5b3df5;
+
+  font-size: 0.7rem;
+  font-weight: 800;
+
+  letter-spacing: 0.075em;
+
+  text-transform: uppercase;
+}
+
+.artifacts-accessibility__panel h2 {
+  margin:
+    0.45rem
+    0
+    0;
+
+  color: #181442;
+
+  font-size:
+    clamp(
+      1.4rem,
+      2.3vw,
+      1.9rem
+    );
+
+  line-height: 1.25;
+}
+
+.artifacts-accessibility__panel > div:last-child p {
+  margin:
+    0
+    0
+    0.8rem;
+
+  color: #68657d;
+
+  font-size: 0.86rem;
+
+  line-height: 1.7;
+}
+
+.artifacts-accessibility__panel > div:last-child p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900PX
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .artifacts-project-note {
+    grid-template-columns:
+      1fr
+      auto;
+  }
+
+  .artifacts-project-note > p {
+    grid-column:
+      1 / -1;
+  }
+
+  .artifacts-grid--platform {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700PX
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .artifacts-section__inner {
+    width:
+      min(
+        100% - 2rem,
+        1120px
+      );
+  }
+
+  .artifacts-hero {
+    padding:
+      6.5rem
+      0
+      3.5rem;
+  }
+
+  .artifacts-library {
+    padding-top: 3rem;
+  }
+
+  .artifacts-grid,
+  .artifacts-grid--platform {
+    grid-template-columns: 1fr;
+  }
+
+  .artifacts-project-note {
+    grid-template-columns: 1fr;
+  }
+
+  .artifacts-project-note > p {
+    grid-column: auto;
+  }
+
+  .artifacts-project-note__status {
+    justify-self: start;
+  }
+
+  .artifacts-accessibility__panel {
+    grid-template-columns: 1fr;
+
+    gap: 1.2rem;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 560PX
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .artifacts-section__inner {
+    width:
+      calc(100% - 1.5rem);
+  }
+
+  .artifacts-hero {
+    padding:
+      5.5rem
+      0
+      3rem;
+  }
+
+  .artifact-group {
+    margin-top: 3.5rem;
+  }
+
+  .artifact-card {
+    min-height: auto;
+
+    padding: 1.25rem;
+  }
+
+  .artifacts-platform {
+    padding:
+      4.5rem
+      0;
+  }
+
+  .artifacts-accessibility {
+    padding:
+      4rem
+      0
+      5.5rem;
+  }
+
+  .artifacts-accessibility__panel {
+    padding: 1.4rem;
+  }
+
+}
