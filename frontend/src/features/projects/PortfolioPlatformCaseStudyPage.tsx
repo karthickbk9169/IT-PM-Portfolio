@@ -10,10 +10,7 @@ import {
 } from 'lucide-react'
 
 import { Link } from 'react-router-dom'
-
-import { BackToTop } from '../../shared/components/BackToTop'
 import { PageSideDecoration } from '../../shared/components/PageSideDecoration'
-
 import './PortfolioPlatformCaseStudyPage.css'
 
 export function PortfolioPlatformCaseStudyPage() {
@@ -193,9 +190,9 @@ export function PortfolioPlatformCaseStudyPage() {
                     Frontend
                   </span>
 
-                  <strong>
+                  <h3>
                     React + TypeScript
-                  </strong>
+                  </h3>
                 </div>
               </div>
 
@@ -665,9 +662,9 @@ export function PortfolioPlatformCaseStudyPage() {
                     User
                   </span>
 
-                  <strong>
+                  <h3>
                     Recruiter Browser
-                  </strong>
+                  </h3>
 
                   <p>
                     Navigates portfolio pages and case studies.
@@ -714,9 +711,9 @@ export function PortfolioPlatformCaseStudyPage() {
                     API
                   </span>
 
-                  <strong>
+                  <h3>
                     ASP.NET Core
-                  </strong>
+                  </h3>
 
                   <p>
                     Provides HTTP endpoints and application
@@ -739,9 +736,9 @@ export function PortfolioPlatformCaseStudyPage() {
                     Data Access
                   </span>
 
-                  <strong>
+                  <h3>
                     Entity Framework Core
-                  </strong>
+                  </h3>
 
                   <p>
                     Maps application models to database operations.
@@ -763,9 +760,9 @@ export function PortfolioPlatformCaseStudyPage() {
                     Database
                   </span>
 
-                  <strong>
+                  <h3>
                     SQL Server
-                  </strong>
+                  </h3>
 
                   <p>
                     Stores persistent portfolio project data.
@@ -2617,7 +2614,6 @@ export function PortfolioPlatformCaseStudyPage() {
 
       </div>
 
-      <BackToTop />
     </main>
   )
 }

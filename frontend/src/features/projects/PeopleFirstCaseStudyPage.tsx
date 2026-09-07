@@ -9,10 +9,7 @@ import {
 } from 'lucide-react'
 
 import { Link } from 'react-router-dom'
-
-import { BackToTop } from '../../shared/components/BackToTop'
 import { PageSideDecoration } from '../../shared/components/PageSideDecoration'
-
 import './PeopleFirstCaseStudyPage.css'
 
 export function PeopleFirstCaseStudyPage() {
@@ -855,10 +852,12 @@ export function PeopleFirstCaseStudyPage() {
                   </h3>
 
                   <p>
-                    Separate registers are maintained so that risks,
-                    issues, assumptions, and dependencies remain
-                    clearly distinguishable and can be reviewed,
-                    assigned, tracked, and escalated appropriately.
+                    Risks, assumptions, and dependencies are maintained
+                    through dedicated project registers so that each
+                    control remains clearly distinguishable and can be
+                    reviewed, assigned, monitored, and escalated
+                    appropriately. Issues are managed through a separate
+                    resolution process when they arise.
                   </p>
                 </div>
 
@@ -874,15 +873,6 @@ export function PeopleFirstCaseStudyPage() {
                     </span>
                   </div>
 
-
-                  <div className="project-control-item">
-                    <strong>Issue Log</strong>
-
-                    <span>
-                      Current problems requiring action or
-                      resolution.
-                    </span>
-                  </div>
 
 
                   <div className="project-control-item">
@@ -1183,11 +1173,11 @@ export function PeopleFirstCaseStudyPage() {
                 </h2>
 
                 <p className="case-study-section-heading__description">
-                  Risks and issues are managed through separate
-                  project controls, with clear assessment,
-                  ownership, response actions, escalation paths,
-                  and regular review through project governance
-                  and status reporting.
+                  Risks are identified, assessed, assigned, monitored,
+                  and managed through the project Risk Register. If a
+                  risk materializes or another delivery problem arises,
+                  it is treated as an issue and managed through a defined
+                  resolution and escalation process.
                 </p>
               </div>
 
@@ -1506,10 +1496,10 @@ export function PeopleFirstCaseStudyPage() {
                   </h3>
 
                   <p>
-                    Once a risk materializes or another delivery
-                    problem occurs, it is managed through the Issue
-                    Log rather than remaining only in the Risk
-                    Register.
+                    If a risk materializes or another delivery problem
+                    occurs, it is treated as an issue and managed through
+                    a defined process covering logging, ownership,
+                    resolution, escalation, verification, and closure.
                   </p>
                 </div>
 
@@ -2872,9 +2862,7 @@ export function PeopleFirstCaseStudyPage() {
               aria-labelledby="project-artifacts-heading"
             >
               <div className="case-study-section-heading">
-                <p>
-                  Project Artifacts
-                </p>
+                <p>Project Artifacts</p>
 
                 <h2 id="project-artifacts-heading">
                   Evidence of Project Management in Practice
@@ -2882,9 +2870,8 @@ export function PeopleFirstCaseStudyPage() {
 
                 <p className="case-study-section-heading__description">
                   The PeopleFirst simulation is supported by project
-                  documentation developed across initiation,
-                  planning, governance, requirements, delivery,
-                  risk management, technical readiness, quality,
+                  documentation developed across initiation, planning,
+                  governance, requirements, project controls, quality,
                   and release preparation. Selected artifacts are
                   presented as portfolio evidence of the
                   project-management approach applied throughout
@@ -2892,524 +2879,130 @@ export function PeopleFirstCaseStudyPage() {
                 </p>
               </div>
 
-
-              {/* ===============================================
-                  GOVERNANCE & PLANNING
-                  =============================================== */}
-
               <div className="artifact-group">
-
                 <div className="artifact-group__heading">
                   <span>01</span>
-
                   <div>
-                    <p>
-                      Governance &amp; Planning
-                    </p>
-
-                    <h3>
-                      Establishing Project Direction &amp; Control
-                    </h3>
+                    <p>Governance &amp; Planning</p>
+                    <h3>Establishing Project Direction &amp; Control</h3>
                   </div>
                 </div>
 
-
                 <div className="artifact-grid">
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Project Plan
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Project Management Plan
-                    </h3>
-
-                    <p>
-                      Defines the overall framework for project
-                      governance, scope, schedule, stakeholders,
-                      communications, quality, risks, dependencies,
-                      change control, and delivery management.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Project Plan</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Project Management Plan</h3>
+                    <p>Defines the overall framework for project governance, scope, schedule, stakeholders, communications, quality, risks, dependencies, change control, and delivery management.</p>
+                    <a href="/artifacts/peoplefirst/project-management-plan.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Project Management Plan PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
 
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Schedule
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Project Schedule &amp; Milestones
-                    </h3>
-
-                    <p>
-                      Provides visibility of major project phases,
-                      milestones, sequencing, dependencies, and
-                      planned delivery activities.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Schedule</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Integrated Project Schedule</h3>
+                    <p>Provides visibility of project phases, activities, milestones, sequencing, dependencies, resource considerations, and planned delivery activities.</p>
+                    <a href="/artifacts/peoplefirst/integrated-project-schedule.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Integrated Project Schedule PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
 
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Stakeholders
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Stakeholder Register
-                    </h3>
-
-                    <p>
-                      Identifies key project stakeholders and
-                      supports analysis of their roles, interests,
-                      influence, communication needs, and
-                      engagement approach.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Stakeholders</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Stakeholder Register</h3>
+                    <p>Identifies key project stakeholders and supports analysis of their roles, interests, influence, communication needs, and engagement approach.</p>
+                    <a href="/artifacts/peoplefirst/stakeholder-register.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Stakeholder Register PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
 
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Communications
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Communications Management Plan
-                    </h3>
-
-                    <p>
-                      Defines project communication channels,
-                      audiences, responsibilities, cadence,
-                      reporting practices, meetings, and
-                      escalation arrangements.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Communications</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Communications Management Plan</h3>
+                    <p>Defines project communication channels, audiences, responsibilities, cadence, reporting practices, meetings, and escalation arrangements.</p>
+                    <a href="/artifacts/peoplefirst/communications-management-plan.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Communications Management Plan PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
-
                 </div>
               </div>
 
-
-              {/* ===============================================
-                  REQUIREMENTS & SCOPE
-                  =============================================== */}
-
               <div className="artifact-group">
-
                 <div className="artifact-group__heading">
                   <span>02</span>
-
                   <div>
-                    <p>
-                      Requirements &amp; Scope
-                    </p>
-
-                    <h3>
-                      Translating Business Needs Into Delivery
-                      Requirements
-                    </h3>
+                    <p>Requirements &amp; Scope</p>
+                    <h3>Translating Business Needs Into Delivery Requirements</h3>
                   </div>
                 </div>
 
-
                 <div className="artifact-grid">
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Requirements
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Requirements Register
-                    </h3>
-
-                    <p>
-                      Records functional and nonfunctional
-                      requirements covering employee leave
-                      management, approvals, administration,
-                      reporting, notifications, performance,
-                      availability, identity, backup, and recovery.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Requirements</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Requirements Register</h3>
+                    <p>Records functional and nonfunctional requirements covering employee leave management, approvals, administration, reporting, notifications, performance, availability, identity, backup, and recovery.</p>
+                    <a href="/artifacts/peoplefirst/requirements-register.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Requirements Register PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
 
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Analysis
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Business Analysis Document
-                    </h3>
-
-                    <p>
-                      Captures the business context, current-state
-                      problem, project objectives, business needs,
-                      scope, and supporting analysis used to shape
-                      the proposed solution.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Analysis</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Business Analysis Document</h3>
+                    <p>Captures the business context, current-state problem, project objectives, business needs, scope, and supporting analysis used to shape the proposed solution.</p>
+                    <a href="/artifacts/peoplefirst/business-analysis-document.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Business Analysis Document PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
-
                 </div>
               </div>
 
-
-              {/* ===============================================
-                  PROJECT CONTROLS
-                  =============================================== */}
-
               <div className="artifact-group">
-
                 <div className="artifact-group__heading">
                   <span>03</span>
-
-                  <div>
-                    <p>Project Controls</p>
-
-                    <h3>
-                      Maintaining Delivery Visibility
-                    </h3>
-                  </div>
+                  <div><p>Project Controls</p><h3>Maintaining Delivery Visibility</h3></div>
                 </div>
-
 
                 <div className="artifact-grid">
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Risk
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
+                    <div className="artifact-card__top"><span className="artifact-card__type">Risk</span><span className="artifact-card__status">Available</span></div>
                     <h3>Risk Register</h3>
-
-                    <p>
-                      Tracks identified project risks, assessment,
-                      ownership, response actions, monitoring
-                      information, and escalation requirements.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <p>Tracks identified project risks, assessment, ownership, response actions, monitoring information, and escalation requirements.</p>
+                    <a href="/artifacts/peoplefirst/risk-register.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Risk Register PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
-
 
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Issue
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>Issue Log</h3>
-
-                    <p>
-                      Records active project problems, their
-                      impact, ownership, required actions,
-                      escalation, target resolution, and closure
-                      status.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Assumption</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Assumptions Log</h3>
+                    <p>Maintains planning assumptions requiring validation, monitoring, or follow-up as project conditions develop.</p>
+                    <a href="/artifacts/peoplefirst/assumptions-log.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Assumptions Log PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
-
 
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Assumption
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Assumptions Log
-                    </h3>
-
-                    <p>
-                      Maintains planning assumptions requiring
-                      validation, monitoring, or follow-up as
-                      project conditions develop.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Dependency</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Dependencies Log</h3>
+                    <p>Tracks internal and external dependencies that may influence sequencing, technical readiness, testing, stakeholder actions, or delivery milestones.</p>
+                    <a href="/artifacts/peoplefirst/dependencies-log.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Dependencies Log PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
-
-
-                  <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Dependency
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Dependencies Log
-                    </h3>
-
-                    <p>
-                      Tracks internal and external dependencies
-                      that may influence sequencing, technical
-                      readiness, testing, stakeholder actions, or
-                      delivery milestones.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  </article>
-
                 </div>
               </div>
-
-
-              {/* ===============================================
-                  TECHNICAL & QUALITY
-                  =============================================== */}
 
               <div className="artifact-group">
-
                 <div className="artifact-group__heading">
                   <span>04</span>
-
-                  <div>
-                    <p>
-                      Technical &amp; Quality
-                    </p>
-
-                    <h3>
-                      Supporting Technical Readiness &amp; Quality
-                      Control
-                    </h3>
-                  </div>
+                  <div><p>Technical &amp; Quality</p><h3>Supporting Quality &amp; Delivery Readiness</h3></div>
                 </div>
 
-
                 <div className="artifact-grid">
-
                   <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Technical
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Technical Readiness Assessment
-                    </h3>
-
-                    <p>
-                      Reviews architecture, integrations,
-                      environments, identity, infrastructure,
-                      security prerequisites, dependencies, and
-                      readiness considerations.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
+                    <div className="artifact-card__top"><span className="artifact-card__type">Quality</span><span className="artifact-card__status">Available</span></div>
+                    <h3>Quality Management Plan</h3>
+                    <p>Defines quality expectations, testing responsibilities, review practices, defect management, acceptance considerations, and release-readiness controls.</p>
+                    <a href="/artifacts/peoplefirst/quality-management-plan.pdf" target="_blank" rel="noopener noreferrer" className="artifact-card__link" aria-label="View Quality Management Plan PDF - opens in a new tab">View PDF<span aria-hidden="true">→</span></a>
                   </article>
-
-
-                  <article className="artifact-card">
-                    <div className="artifact-card__top">
-                      <span className="artifact-card__type">
-                        Quality
-                      </span>
-
-                      <span className="artifact-card__status">
-                        Available
-                      </span>
-                    </div>
-
-                    <h3>
-                      Quality Management Plan
-                    </h3>
-
-                    <p>
-                      Defines quality expectations, testing
-                      responsibilities, review practices, defect
-                      management, acceptance considerations, and
-                      release-readiness controls.
-                    </p>
-
-                    <Link
-                      to="/artifacts"
-                      className="artifact-card__link"
-                    >
-                      View Artifact
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  </article>
-
                 </div>
               </div>
 
-
-              {/* ===============================================
-                  ARTIFACT LIBRARY CTA
-                  =============================================== */}
-
               <div className="artifact-library-callout">
-
                 <div>
-                  <span className="artifact-library-callout__label">
-                    Portfolio Evidence
-                  </span>
-
-                  <h3>
-                    Explore the Project Artifact Library
-                  </h3>
-
-                  <p>
-                    Selected PeopleFirst project artifacts are
-                    presented in the portfolio as supporting
-                    evidence of planning, governance, analysis,
-                    technical coordination, quality, and
-                    delivery-management practices.
-                  </p>
+                  <span className="artifact-library-callout__label">Portfolio Evidence</span>
+                  <h3>Explore the Project Artifact Library</h3>
+                  <p>Selected PeopleFirst project artifacts are presented in the portfolio as supporting evidence of planning, governance, analysis, project controls, quality, and delivery-management practices.</p>
                 </div>
 
-
-                <Link
-                  to="/artifacts"
-                  className="artifact-library-callout__button"
-                >
+                <Link to="/artifacts" className="artifact-library-callout__button">
                   View All Artifacts
                   <span aria-hidden="true">→</span>
                 </Link>
-
               </div>
-
             </section>
 
           </div>
@@ -3417,7 +3010,6 @@ export function PeopleFirstCaseStudyPage() {
 
       </div>
 
-      <BackToTop />
     </main>
   )
 }

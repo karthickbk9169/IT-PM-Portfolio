@@ -1,19 +1,16 @@
 import {
   BookOpenCheck,
   Boxes,
-  ClipboardCheck,
   FileCheck2,
   FileSearch,
   FileText,
   Gauge,
   ListChecks,
   Network,
-  ShieldCheck,
   TriangleAlert,
   UsersRound,
 } from 'lucide-react'
 
-import { BackToTop } from '../../shared/components/BackToTop'
 import { PageSideDecoration } from '../../shared/components/PageSideDecoration'
 
 import './ArtifactsPage.css'
@@ -26,14 +23,16 @@ const peopleFirstArtifacts = [
     description:
       'Defines the overall project-management approach for scope, schedule, stakeholders, communications, quality, risks, dependencies, and delivery governance.',
     icon: FileText,
+    href: '/artifacts/peoplefirst/project-management-plan.pdf',
   },
   {
-    title: 'Project Schedule & Milestones',
+    title: 'Integrated Project Schedule',
     type: 'Schedule',
     category: 'Governance & Planning',
     description:
-      'Provides visibility of major project phases, milestones, delivery activities, dependencies, and the planned implementation timeline.',
+      'Provides visibility of project phases, activities, milestones, dependencies, resource considerations, and the planned implementation timeline.',
     icon: Gauge,
+    href: '/artifacts/peoplefirst/integrated-project-schedule.pdf',
   },
   {
     title: 'Stakeholder Register',
@@ -42,6 +41,7 @@ const peopleFirstArtifacts = [
     description:
       'Identifies key stakeholders and supports structured consideration of their interests, influence, communication needs, and engagement approach.',
     icon: UsersRound,
+    href: '/artifacts/peoplefirst/stakeholder-register.pdf',
   },
   {
     title: 'Communications Management Plan',
@@ -50,6 +50,7 @@ const peopleFirstArtifacts = [
     description:
       'Defines project communication practices covering status reporting, Scrum events, stakeholder updates, technical discussions, and escalation.',
     icon: Network,
+    href: '/artifacts/peoplefirst/communications-management-plan.pdf',
   },
   {
     title: 'Requirements Register',
@@ -58,6 +59,7 @@ const peopleFirstArtifacts = [
     description:
       'Records functional and nonfunctional requirements for employees, managers, HR administrators, reporting, notifications, and supporting technical expectations.',
     icon: ListChecks,
+    href: '/artifacts/peoplefirst/requirements-register.pdf',
   },
   {
     title: 'Business Analysis Document',
@@ -66,6 +68,7 @@ const peopleFirstArtifacts = [
     description:
       'Connects the business problem and project objectives with scope, stakeholder needs, requirements, assumptions, and planned solution capabilities.',
     icon: FileSearch,
+    href: '/artifacts/peoplefirst/business-analysis-document.pdf',
   },
   {
     title: 'Risk Register',
@@ -74,14 +77,7 @@ const peopleFirstArtifacts = [
     description:
       'Tracks project risks, probability and impact, response actions, ownership, monitoring information, and escalation considerations.',
     icon: TriangleAlert,
-  },
-  {
-    title: 'Issue Log',
-    type: 'Issue',
-    category: 'Project Controls',
-    description:
-      'Records current project problems requiring action, ownership, resolution, escalation, verification, and closure.',
-    icon: ClipboardCheck,
+    href: '/artifacts/peoplefirst/risk-register.pdf',
   },
   {
     title: 'Assumptions Log',
@@ -90,6 +86,7 @@ const peopleFirstArtifacts = [
     description:
       'Maintains planning assumptions that require validation or continued monitoring during project delivery.',
     icon: BookOpenCheck,
+    href: '/artifacts/peoplefirst/assumptions-log.pdf',
   },
   {
     title: 'Dependencies Log',
@@ -98,14 +95,7 @@ const peopleFirstArtifacts = [
     description:
       'Tracks internal and external dependencies that may affect implementation, testing, security, environments, integrations, or release timing.',
     icon: Boxes,
-  },
-  {
-    title: 'Technical Readiness Assessment',
-    type: 'Technical',
-    category: 'Technical & Quality',
-    description:
-      'Documents architecture, integrations, identity, environments, technical prerequisites, delivery dependencies, and readiness considerations.',
-    icon: ShieldCheck,
+    href: '/artifacts/peoplefirst/dependencies-log.pdf',
   },
   {
     title: 'Quality Management Plan',
@@ -114,6 +104,7 @@ const peopleFirstArtifacts = [
     description:
       'Defines quality expectations, testing responsibilities, review activities, defect controls, acceptance considerations, and release-readiness practices.',
     icon: FileCheck2,
+    href: '/artifacts/peoplefirst/quality-management-plan.pdf',
   },
 ]
 
@@ -204,7 +195,7 @@ export function ArtifactsPage() {
                 Self-Service Portal case study and demonstrate how
                 project-management practices are applied across
                 initiation, planning, governance, requirements,
-                delivery control, technical readiness, and quality.
+                delivery control, technical coordination, and quality.
               </p>
 
             </div>
@@ -288,7 +279,7 @@ export function ArtifactsPage() {
             <ArtifactGroup
               number="04"
               label="Technical & Quality"
-              heading="Supporting Readiness & Quality Control"
+              heading="Supporting Quality & Delivery Readiness"
               artifacts={peopleFirstArtifacts.filter(
                 (artifact) =>
                   artifact.category === 'Technical & Quality',
@@ -405,17 +396,17 @@ export function ArtifactsPage() {
               <div>
 
                 <p>
-                  Selected artifacts will be published as accessible
-                  PDFs with structured headings, logical reading order,
-                  searchable text, meaningful document metadata,
-                  accessible tables, descriptive links, and appropriate
-                  treatment of informative and decorative graphics.
+                  Published PeopleFirst artifacts use accessible PDF
+                  preparation practices, including structured headings,
+                  logical reading order, searchable text, meaningful
+                  document metadata, accessible tables, and appropriate
+                  document structure.
                 </p>
 
                 <p>
                   Source DOCX and XLSX files remain working project
-                  documents, while accessible PDF versions will be used
-                  for recruiter-facing portfolio publication.
+                  documents, while the PDF versions provide
+                  portfolio evidence.
                 </p>
 
               </div>
@@ -427,7 +418,6 @@ export function ArtifactsPage() {
 
       </div>
 
-      <BackToTop />
     </main>
   )
 }
@@ -506,9 +496,20 @@ function ArtifactGroup({
               </p>
 
               <div className="artifact-card__footer">
+
                 <span>
-                  Accessible PDF preparation
+                  Available
                 </span>
+
+                <a
+                  href={artifact.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${artifact.title} PDF - opens in a new tab`}
+                >
+                  View PDF →
+                </a>
+
               </div>
 
             </article>

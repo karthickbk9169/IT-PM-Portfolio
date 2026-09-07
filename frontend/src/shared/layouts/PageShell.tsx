@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Mail } from 'lucide-react'
 import { Header } from '../components/Header'
+import { BackToTop } from '../components/BackToTop'
 import './PageShell.css'
 
 type PageShellProps = {
@@ -15,6 +16,8 @@ export function PageShell({ children }: PageShellProps) {
       <main>
         {children}
       </main>
+
+      <BackToTop />
 
       <footer className="site-footer">
         <div className="site-footer__inner">

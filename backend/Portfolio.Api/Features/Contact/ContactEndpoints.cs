@@ -1,4 +1,6 @@
+using System.Net;
 using System.Net.Mail;
+using Resend;
 
 namespace Portfolio.Api.Features.Contact;
 
@@ -10,7 +12,12 @@ public static class ContactEndpoints
     {
         app.MapPost(
             "/api/contact",
-            (ContactRequest request) =>
+            async (
+                ContactRequest request,
+                IResend resend,
+                IConfiguration configuration,
+                ILogger<ContactRequest> logger
+            ) =>
             {
                 var validationError =
                     ValidateContactRequest(request);
@@ -25,24 +32,142 @@ public static class ContactEndpoints
                     );
                 }
 
-                /*
-                 * Email delivery will be connected here.
-                 *
-                 * For now, reaching this point confirms that:
-                 *
-                 * React submitted the form successfully.
-                 * The ASP.NET Core endpoint received the data.
-                 * Server-side validation passed.
-                 */
+                var recipientEmail =
+                    configuration["Resend:RecipientEmail"];
 
-                return Results.Ok(
-                    new
-                    {
-                        message =
-                            "Your message was submitted successfully."
-                    }
-                );
+                if (string.IsNullOrWhiteSpace(recipientEmail))
+                {
+                    logger.LogError(
+                        "The contact-form recipient email is not configured."
+                    );
+
+                    return Results.Problem(
+                        statusCode:
+                            StatusCodes.Status500InternalServerError,
+                        title:
+                            "Email configuration error",
+                        detail:
+                            "The contact service is not configured correctly."
+                    );
+                }
+
+                try
+                {
+                    var safeName =
+                        WebUtility.HtmlEncode(
+                            request.Name.Trim()
+                        );
+
+                    var safeCompany =
+                        WebUtility.HtmlEncode(
+                            request.Company.Trim()
+                        );
+
+                    var safeEmail =
+                        WebUtility.HtmlEncode(
+                            request.Email.Trim()
+                        );
+
+                    var safeMessage =
+                        WebUtility.HtmlEncode(
+                            request.Message.Trim()
+                        )
+                        .Replace(
+                            "\r\n",
+                            "<br />"
+                        )
+                        .Replace(
+                            "\n",
+                            "<br />"
+                        );
+
+                    var email =
+                        new EmailMessage
+                        {
+                            From =
+                                "Karthick Portfolio <onboarding@resend.dev>",
+
+                            Subject =
+                                $"Portfolio Contact - {request.Company.Trim()}",
+
+                            HtmlBody =
+                                $"""
+                                <h2>New Portfolio Contact</h2>
+
+                                <p>
+                                    A new message was submitted through
+                                    your IT Project Management portfolio.
+                                </p>
+
+                                <hr />
+
+                                <p>
+                                    <strong>Name:</strong>
+                                    {safeName}
+                                </p>
+
+                                <p>
+                                    <strong>Company / Organization:</strong>
+                                    {safeCompany}
+                                </p>
+
+                                <p>
+                                    <strong>Email:</strong>
+                                    {safeEmail}
+                                </p>
+
+                                <p>
+                                    <strong>Message:</strong>
+                                </p>
+
+                                <p>
+                                    {safeMessage}
+                                </p>
+                                """
+                        };
+
+                    email.To.Add(
+                        recipientEmail
+                    );
+
+                    email.ReplyTo =
+                        new EmailAddressList
+                        {
+                            request.Email.Trim()
+                        };
+
+                    await resend.EmailSendAsync(
+                        email
+                    );
+
+                    return Results.Ok(
+                        new
+                        {
+                            message =
+                                "Your message was sent successfully."
+                        }
+                    );
+                }
+                catch (Exception exception)
+                {
+                    logger.LogError(
+                        exception,
+                        "Failed to send portfolio contact email."
+                    );
+
+                    return Results.Problem(
+                        statusCode:
+                            StatusCodes.Status502BadGateway,
+                        title:
+                            "Unable to send message",
+                        detail:
+                            "The message could not be sent at this time. Please try again later."
+                    );
+                }
             }
+        )
+        .RequireRateLimiting(
+            "ContactFormPolicy"
         );
     }
 
@@ -51,27 +176,37 @@ public static class ContactEndpoints
         ContactRequest request
     )
     {
-        if (string.IsNullOrWhiteSpace(request.Name))
+        if (string.IsNullOrWhiteSpace(
+            request.Name
+        ))
         {
             return "Name is required.";
         }
 
-        if (string.IsNullOrWhiteSpace(request.Company))
+        if (string.IsNullOrWhiteSpace(
+            request.Company
+        ))
         {
             return "Company or organization is required.";
         }
 
-        if (string.IsNullOrWhiteSpace(request.Email))
+        if (string.IsNullOrWhiteSpace(
+            request.Email
+        ))
         {
             return "Email is required.";
         }
 
-        if (!IsValidEmail(request.Email))
+        if (!IsValidEmail(
+            request.Email
+        ))
         {
             return "Please enter a valid email address.";
         }
 
-        if (string.IsNullOrWhiteSpace(request.Message))
+        if (string.IsNullOrWhiteSpace(
+            request.Message
+        ))
         {
             return "Message is required.";
         }
@@ -106,9 +241,13 @@ public static class ContactEndpoints
     {
         try
         {
-            var address = new MailAddress(email);
+            var address =
+                new MailAddress(
+                    email.Trim()
+                );
 
-            return address.Address == email.Trim();
+            return address.Address ==
+                email.Trim();
         }
         catch
         {

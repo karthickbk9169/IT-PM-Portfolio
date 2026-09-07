@@ -355,7 +355,7 @@
 }
 
 .case-study-snapshot__item div > span {
-  color: #858199;
+  color: #6b677f;
 
   font-size: 0.7rem;
 
@@ -642,7 +642,7 @@
 
   margin-bottom: 0.35rem;
 
-  color: #77738e;
+  color: #5c5872;
 
   font-size: 0.68rem;
 
@@ -1184,7 +1184,7 @@
 
   margin-top: 0.35rem;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.78rem;
 
@@ -1300,7 +1300,7 @@
     0
     0;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.76rem;
 
@@ -1583,7 +1583,7 @@
     0
     0;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.76rem;
 
@@ -1709,7 +1709,7 @@
 .risk-area-card__response span {
   display: block;
 
-  color: #858199;
+  color: #6b677f;
 
   font-size: 0.66rem;
 
@@ -1839,7 +1839,7 @@
 }
 
 .issue-step span {
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.77rem;
 
@@ -2043,7 +2043,7 @@
     0
     0;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.76rem;
 
@@ -2267,7 +2267,7 @@
 .quality-target span {
   margin-top: 0.3rem;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.72rem;
 
@@ -2379,7 +2379,7 @@
 }
 
 .defect-step span {
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.77rem;
 
@@ -2582,7 +2582,7 @@
     0
     0;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.8rem;
 
@@ -2708,7 +2708,7 @@
 .technical-card__focus span {
   display: block;
 
-  color: #858199;
+  color: #6b677f;
 
   font-size: 0.66rem;
 
@@ -2837,7 +2837,7 @@
 
   margin-top: 0.4rem;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.75rem;
 
@@ -2953,7 +2953,7 @@
 
   margin-top: 0.35rem;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.76rem;
 
@@ -3211,7 +3211,7 @@
 
   margin-top: 0.25rem;
 
-  color: #716d84;
+  color: #69657e;
 
   font-size: 0.76rem;
 
@@ -3422,7 +3422,7 @@
   min-width: 30px;
   height: 26px;
 
-  color: #77728c;
+  color: #69657e;
 
   background:
     rgba(91, 61, 245, 0.045);
@@ -3445,7 +3445,7 @@
 .trajectory-step small {
   margin-top: 0.3rem;
 
-  color: #858199;
+  color: #6b677f;
 
   font-size: 0.69rem;
 }

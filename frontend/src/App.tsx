@@ -6,6 +6,8 @@ import type { Project } from './features/projects/types'
 import { getProjects } from './features/projects/api'
 
 import { PageShell } from './shared/layouts/PageShell'
+import { ScrollToTop } from './shared/components/ScrollToTop'
+
 import { HomePage } from './features/home/HomePage'
 import { AboutPage } from './features/about/AboutPage'
 import { ProjectsPage } from './features/projects/ProjectsPage'
@@ -39,7 +41,9 @@ function App() {
   }, [])
 
   return (
-  <PageShell>
+    <PageShell>
+      <ScrollToTop />
+
       <Routes>
         <Route
           path="/"

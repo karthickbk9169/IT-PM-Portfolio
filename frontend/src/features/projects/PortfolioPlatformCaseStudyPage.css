@@ -343,7 +343,7 @@
 .platform-snapshot__item div > span {
   display: block;
 
-  color: #858199;
+  color: #6f6a82;
 
   font-size: 0.7rem;
   font-weight: 700;
@@ -621,14 +621,18 @@
   text-transform: uppercase;
 }
 
-.platform-architecture-node strong {
+.platform-architecture-node h3 {
   display: block;
 
-  margin-top: 0.65rem;
+  margin:
+    0.65rem
+    0
+    0;
 
   color: #201c47;
 
   font-size: 0.9rem;
+  font-weight: 700;
 
   line-height: 1.4;
 }
@@ -757,7 +761,7 @@
 
   margin-top: 0.35rem;
 
-  color: #716d84;
+  color: #67637a;
 
   font-size: 0.76rem;
 

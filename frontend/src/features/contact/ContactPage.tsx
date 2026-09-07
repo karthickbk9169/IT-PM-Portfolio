@@ -12,7 +12,6 @@ import {
 } from 'react'
 
 import { PageSideDecoration } from '../../shared/components/PageSideDecoration'
-import { BackToTop } from '../../shared/components/BackToTop'
 
 import { sendContactMessage } from './api'
 
@@ -452,7 +451,6 @@ export function ContactPage() {
 
       </div>
 
-      <BackToTop />
     </main>
   )
 }
