@@ -21,26 +21,23 @@ builder.Services.AddCors(options =>
     });
 });
 
-var connectionString =
-    builder.Configuration.GetConnectionString(
-        "DefaultConnection"
-    );
-
-builder.Services.AddDbContext<PortfolioDbContext>(options =>
+// Use SQL Server locally and an in-memory database in production.
+if (builder.Environment.IsDevelopment())
 {
-    if (!string.IsNullOrWhiteSpace(connectionString))
-    {
+    builder.Services.AddDbContext<PortfolioDbContext>(options =>
         options.UseSqlServer(
-            connectionString
-        );
-    }
-    else
-    {
+            builder.Configuration.GetConnectionString(
+                "DefaultConnection"
+            )
+        ));
+}
+else
+{
+    builder.Services.AddDbContext<PortfolioDbContext>(options =>
         options.UseInMemoryDatabase(
             "PortfolioDb"
-        );
-    }
-});
+        ));
+}
 
 // Configure Resend email service.
 var resendApiKey =
@@ -90,6 +87,7 @@ builder.Services.AddRateLimiter(options =>
 
 var app = builder.Build();
 
+// Ensure the configured database is created and seeded.
 using (var scope = app.Services.CreateScope())
 {
     var db =
