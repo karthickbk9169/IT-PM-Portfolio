@@ -82,7 +82,7 @@ export function PortfolioPlatformCaseStudyPage() {
               <span className="platform-case-study-status">
                 <i aria-hidden="true" />
 
-                In Progress
+                V1 Deployed
               </span>
 
             </div>
@@ -471,7 +471,7 @@ export function PortfolioPlatformCaseStudyPage() {
                     Prepare the frontend, API, database,
                     configuration, and production validation
                     activities required to release the application
-                    through Azure.
+                    through Render.
                   </p>
 
                 </article>
@@ -847,7 +847,7 @@ export function PortfolioPlatformCaseStudyPage() {
                     </strong>
 
                     <span>
-                      Local development can transition to Azure
+                      Local development can transition to Render
                       deployment without redesigning the solution.
                     </span>
 
@@ -2052,7 +2052,7 @@ export function PortfolioPlatformCaseStudyPage() {
                 </p>
 
                 <h2 id="platform-deployment-heading">
-                  Preparing the Application for Azure
+                  Deploying the Application to Render
                 </h2>
 
                 <p className="platform-section-heading__description">
@@ -2100,7 +2100,7 @@ export function PortfolioPlatformCaseStudyPage() {
                   </span>
 
                   <strong>
-                    Azure Static Web Apps
+                    Render Static Site
                   </strong>
 
                   <p>
@@ -2124,7 +2124,7 @@ export function PortfolioPlatformCaseStudyPage() {
                   </span>
 
                   <strong>
-                    Azure App Service
+                    Render Web Service
                   </strong>
 
                   <p>
@@ -2148,7 +2148,7 @@ export function PortfolioPlatformCaseStudyPage() {
                   </span>
 
                   <strong>
-                    Azure SQL Database
+                    EF Core InMemory
                   </strong>
 
                   <p>
@@ -2247,11 +2247,11 @@ export function PortfolioPlatformCaseStudyPage() {
                 </span>
 
                 <strong>
-                  Planned / In Progress
+                  V1 deployed/completed
                 </strong>
 
                 <p>
-                  The Azure production architecture and deployment
+                  The Render production architecture and deployment
                   sequence are defined. Production deployment and
                   post-deployment validation remain part of the
                   current release activities.
@@ -2301,7 +2301,7 @@ export function PortfolioPlatformCaseStudyPage() {
                   </span>
 
                   <strong>
-                    In Progress
+                    V1 Deployed
                   </strong>
 
                 </div>
@@ -2310,7 +2310,7 @@ export function PortfolioPlatformCaseStudyPage() {
                   Core application development is substantially
                   established. Remaining work focuses on
                   completing recruiter-facing content, final
-                  validation, source-control cleanup, Azure
+                  validation, source-control cleanup, Render
                   deployment, and production smoke testing.
                 </p>
 
@@ -2421,14 +2421,15 @@ export function PortfolioPlatformCaseStudyPage() {
                   </span>
 
                   <h3>
-                    Release Preparation Underway
+                    V1 Release Deployed
                   </h3>
 
                   <p>
-                    Final accessibility verification, Git cleanup,
-                    production configuration, Azure deployment,
-                    and smoke testing remain part of the release
-                    path.
+                    The V1 application is deployed on Render, with
+                    core routes, API connectivity, project data,
+                    responsive behavior, accessibility, and
+                    contact-form functionality validated in the
+                    production environment.
                   </p>
 
                 </article>
@@ -2574,7 +2575,7 @@ export function PortfolioPlatformCaseStudyPage() {
                   </h3>
 
                   <p>
-                    Azure deployment and production validation will
+                    Render deployment and production validation
                     provide the final operational evidence for the
                     V1 release.
                   </p>

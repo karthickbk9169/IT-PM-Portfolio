@@ -122,8 +122,8 @@ export function AboutPage() {
             </h1>
 
             <p className="about-intro__lead">
-              I am an experienced project and people leader transitioning into Technical Project Management and Scrum,
-              with extensive leadership and project experience, combining structured project governance, Agile delivery,
+              I am an experienced project and people leader transitioning into Technical Project Management,
+              with extensive leadership and project experience, combining structured project governance, Agile and Scrum delivery,
               stakeholder coordination, and practical understanding of modern software delivery.
             </p>
 

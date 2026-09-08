@@ -31,7 +31,7 @@ const portfolioTags = [
   'ASP.NET Core',
   'SQL Server',
   'Git / GitHub',
-  'Azure',
+  'Render',
   'Generative AI',
 ]
 
@@ -534,7 +534,7 @@ export function ProjectsPage({
                       <div>
                         <CheckCircle2 />
                         <span>
-                          Azure Deployment
+                          Render Deployment
                         </span>
                       </div>
 

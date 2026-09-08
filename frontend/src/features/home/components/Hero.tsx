@@ -16,7 +16,7 @@ export function Hero() {
       <div className="hero-section__inner">
         <div className="hero-section__content">
           <p className="hero-section__eyebrow">
-            Technical Project Manager / Scrum Master
+            Technical Project Management / Scrum Delivery
           </p>
 
           <h1 id="hero-heading">
@@ -27,9 +27,9 @@ export function Hero() {
           </h1>
 
           <p className="hero-section__description">
-            Technical Project Manager and Scrum Master with extensive leadership
-            and project experience, combining structured project governance,
-            Agile delivery, and practical technical understanding.
+            Project and people leader transitioning into Technical Project Management,
+            combining extensive leadership and project experience with structured project
+            governance, Agile delivery, and practical technical understanding.
           </p>
 
           <div
