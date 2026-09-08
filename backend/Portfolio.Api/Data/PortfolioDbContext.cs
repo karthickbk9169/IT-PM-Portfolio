@@ -35,7 +35,7 @@ public class PortfolioDbContext : DbContext
             Summary = "Design and development of a modular, accessible portfolio platform that demonstrates IT project-management capability through projects, case studies and practical delivery artifacts.",
             Description = "A full-stack portfolio application built using React, TypeScript, ASP.NET Core, Entity Framework Core and SQL Server. The project applies iterative delivery, modular architecture, source control, accessibility practices, testing and release management while providing a professional platform for demonstrating IT project-management experience.",
             Role = "Technical Project Manager / Developer",
-            Status = "In Progress",
+            Status = "V1 Deployed",
             IsFeatured = false
         }
     );
