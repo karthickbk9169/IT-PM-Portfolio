@@ -10,16 +10,22 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddOpenApi();
 
+
+// Configure CORS for local development and production frontend.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins(
+                "http://localhost:5173",
+                "https://it-pm-portfolio-frontend.onrender.com"
+            )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
+
 
 // Use SQL Server locally and an in-memory database in production.
 if (builder.Environment.IsDevelopment())
@@ -38,6 +44,7 @@ else
             "PortfolioDb"
         ));
 }
+
 
 // Configure Resend email service.
 var resendApiKey =
@@ -58,6 +65,7 @@ builder.Services.Configure<ResendClientOptions>(
 );
 
 builder.Services.AddTransient<IResend, ResendClient>();
+
 
 // Protect the public Contact endpoint from excessive submissions.
 builder.Services.AddRateLimiter(options =>
@@ -85,7 +93,9 @@ builder.Services.AddRateLimiter(options =>
         StatusCodes.Status429TooManyRequests;
 });
 
+
 var app = builder.Build();
+
 
 // Ensure the configured database is created and seeded.
 using (var scope = app.Services.CreateScope())
@@ -97,9 +107,14 @@ using (var scope = app.Services.CreateScope())
     db.Database.EnsureCreated();
 }
 
+
+// Enable CORS.
 app.UseCors("FrontendPolicy");
 
+
+// Enable rate limiting.
 app.UseRateLimiter();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -109,7 +124,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
+// Map API endpoints.
 app.MapProjectEndpoints();
 app.MapContactEndpoints();
+
 
 app.Run();
