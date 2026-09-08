@@ -9,11 +9,14 @@ type ContactResponse = {
   message: string
 }
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5029'
+
 export async function sendContactMessage(
   request: ContactRequest,
 ): Promise<ContactResponse> {
   const response = await fetch(
-    'http://localhost:5029/api/contact',
+    `${API_BASE_URL}/api/contact`,
     {
       method: 'POST',
 
