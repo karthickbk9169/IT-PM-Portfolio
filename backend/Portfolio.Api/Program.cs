@@ -21,12 +21,26 @@ builder.Services.AddCors(options =>
     });
 });
 
+var connectionString =
+    builder.Configuration.GetConnectionString(
+        "DefaultConnection"
+    );
+
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
-    options.UseSqlServer(
-        builder.Configuration.GetConnectionString(
-            "DefaultConnection"
-        )
-    ));
+{
+    if (!string.IsNullOrWhiteSpace(connectionString))
+    {
+        options.UseSqlServer(
+            connectionString
+        );
+    }
+    else
+    {
+        options.UseInMemoryDatabase(
+            "PortfolioDb"
+        );
+    }
+});
 
 // Configure Resend email service.
 var resendApiKey =
@@ -75,6 +89,15 @@ builder.Services.AddRateLimiter(options =>
 });
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db =
+        scope.ServiceProvider
+            .GetRequiredService<PortfolioDbContext>();
+
+    db.Database.EnsureCreated();
+}
 
 app.UseCors("FrontendPolicy");
 
