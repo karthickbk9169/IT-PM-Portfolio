@@ -48,7 +48,7 @@ export function PageShell({ children }: PageShellProps) {
 
               <a
                 className="site-footer__linkedin"
-                href="YOUR_LINKEDIN_URL"
+                href="https://www.linkedin.com/in/karthick-bk-6a06b482"
                 target="_blank"
                 rel="noreferrer"
               >
